@@ -19,6 +19,7 @@ namespace AsterixDisplayAnalyser
         private void PredictionControl_Load(object sender, EventArgs e)
         {
             SyncConnectionData();
+            this.comboBoxCriteria.SelectedIndex = 0;
         }
 
         private void SyncConnectionData()
@@ -66,12 +67,46 @@ namespace AsterixDisplayAnalyser
             System.Collections.Generic.List<MySqlProvider.PredictionDataSetOneRow> DataRetreived =
            MySQL.GetDataSet(Table);
 
-           //this.dataGridViewDataSet
+            this.dataGridViewDataSet.Rows.Clear();
             foreach (MySqlProvider.PredictionDataSetOneRow Item in DataRetreived)
             {
-                //this.dataGridViewDataSet
+                this.dataGridViewDataSet.Rows.Add(Item.ACID, Item.Lat, Item.Lon, Item.Time, Item.FL, Item.Accuracy);
             }
         }
 
+        private void comboBoxCriteria_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (this.comboBoxCriteria.SelectedIndex == 0)
+            {
+                this.comboBoxACID.Enabled = false;
+                this.numericUpDownHrs.Enabled = false;
+                this.numericUpDownMin.Enabled = false;
+            }
+            else if (this.comboBoxCriteria.SelectedIndex == 1)
+            {
+                this.comboBoxACID.Enabled = true;
+                this.numericUpDownHrs.Enabled = true;
+                this.numericUpDownMin.Enabled = true;
+                PupulateACID_ComboBox();
+            }
+            else if (this.comboBoxCriteria.SelectedIndex == 2)
+            {
+                this.comboBoxACID.Enabled = false;
+                this.numericUpDownHrs.Enabled = true;
+                this.numericUpDownMin.Enabled = true;
+            }
+            else if (this.comboBoxCriteria.SelectedIndex == 3)
+            {
+                this.comboBoxACID.Enabled = true;
+                this.numericUpDownHrs.Enabled = false;
+                this.numericUpDownMin.Enabled = false;
+                PupulateACID_ComboBox();
+            }
+        }
+
+        private void PupulateACID_ComboBox()
+        {
+
+        }
     }
 }

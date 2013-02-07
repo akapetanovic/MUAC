@@ -42,10 +42,10 @@
             this.button1 = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.radioButton3 = new System.Windows.Forms.RadioButton();
             this.button2 = new System.Windows.Forms.Button();
+            this.radioButton3 = new System.Windows.Forms.RadioButton();
+            this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.dataGridViewDataSet = new System.Windows.Forms.DataGridView();
             this.ACID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -53,10 +53,20 @@
             this.Time = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.FL = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ACUR = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.comboBoxCriteria = new System.Windows.Forms.ComboBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.comboBoxACID = new System.Windows.Forms.ComboBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.numericUpDownHrs = new System.Windows.Forms.NumericUpDown();
+            this.label8 = new System.Windows.Forms.Label();
+            this.numericUpDownMin = new System.Windows.Forms.NumericUpDown();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownHrs)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownMin)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -66,10 +76,10 @@
             this.groupBox1.Controls.Add(this.checkBox2Active);
             this.groupBox1.Location = new System.Drawing.Point(12, 3);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(105, 118);
+            this.groupBox1.Size = new System.Drawing.Size(78, 118);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Prediction Tables";
+            this.groupBox1.Text = "Tables";
             // 
             // checkBox3Active
             // 
@@ -116,9 +126,9 @@
             this.groupBox2.Controls.Add(this.label2);
             this.groupBox2.Controls.Add(this.label1);
             this.groupBox2.Controls.Add(this.button1);
-            this.groupBox2.Location = new System.Drawing.Point(123, 3);
+            this.groupBox2.Location = new System.Drawing.Point(96, 3);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(155, 118);
+            this.groupBox2.Size = new System.Drawing.Size(113, 118);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "My Sql Connection";
@@ -198,58 +208,65 @@
             // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.button2);
+            this.groupBox3.Controls.Add(this.numericUpDownMin);
+            this.groupBox3.Controls.Add(this.label8);
+            this.groupBox3.Controls.Add(this.numericUpDownHrs);
+            this.groupBox3.Controls.Add(this.label7);
+            this.groupBox3.Controls.Add(this.label6);
+            this.groupBox3.Controls.Add(this.comboBoxACID);
+            this.groupBox3.Controls.Add(this.label5);
+            this.groupBox3.Controls.Add(this.comboBoxCriteria);
             this.groupBox3.Controls.Add(this.radioButton3);
             this.groupBox3.Controls.Add(this.radioButton2);
             this.groupBox3.Controls.Add(this.radioButton1);
-            this.groupBox3.Location = new System.Drawing.Point(285, 3);
+            this.groupBox3.Location = new System.Drawing.Point(215, 3);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(92, 118);
+            this.groupBox3.Size = new System.Drawing.Size(222, 118);
             this.groupBox3.TabIndex = 4;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Data Set";
             // 
-            // radioButton1
+            // button2
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Checked = true;
-            this.radioButton1.Location = new System.Drawing.Point(7, 19);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(61, 17);
-            this.radioButton1.TabIndex = 0;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "Table 1";
-            this.radioButton1.UseVisualStyleBackColor = true;
-            // 
-            // radioButton2
-            // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(7, 42);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(61, 17);
-            this.radioButton2.TabIndex = 1;
-            this.radioButton2.Text = "Table 2";
-            this.radioButton2.UseVisualStyleBackColor = true;
+            this.button2.Location = new System.Drawing.Point(10, 585);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(427, 21);
+            this.button2.TabIndex = 3;
+            this.button2.Text = "Get Data";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // radioButton3
             // 
             this.radioButton3.AutoSize = true;
-            this.radioButton3.Location = new System.Drawing.Point(7, 65);
+            this.radioButton3.Location = new System.Drawing.Point(7, 49);
             this.radioButton3.Name = "radioButton3";
             this.radioButton3.Size = new System.Drawing.Size(61, 17);
             this.radioButton3.TabIndex = 2;
             this.radioButton3.Text = "Table 3";
             this.radioButton3.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // radioButton2
             // 
-            this.button2.Location = new System.Drawing.Point(7, 89);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 3;
-            this.button2.Text = "Get Data";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.radioButton2.AutoSize = true;
+            this.radioButton2.Location = new System.Drawing.Point(7, 32);
+            this.radioButton2.Name = "radioButton2";
+            this.radioButton2.Size = new System.Drawing.Size(61, 17);
+            this.radioButton2.TabIndex = 1;
+            this.radioButton2.Text = "Table 2";
+            this.radioButton2.UseVisualStyleBackColor = true;
+            // 
+            // radioButton1
+            // 
+            this.radioButton1.AutoSize = true;
+            this.radioButton1.Checked = true;
+            this.radioButton1.Location = new System.Drawing.Point(7, 15);
+            this.radioButton1.Name = "radioButton1";
+            this.radioButton1.Size = new System.Drawing.Size(61, 17);
+            this.radioButton1.TabIndex = 0;
+            this.radioButton1.TabStop = true;
+            this.radioButton1.Text = "Table 1";
+            this.radioButton1.UseVisualStyleBackColor = true;
             // 
             // dataGridViewDataSet
             // 
@@ -265,7 +282,7 @@
             this.dataGridViewDataSet.Location = new System.Drawing.Point(10, 140);
             this.dataGridViewDataSet.Name = "dataGridViewDataSet";
             this.dataGridViewDataSet.ReadOnly = true;
-            this.dataGridViewDataSet.Size = new System.Drawing.Size(357, 150);
+            this.dataGridViewDataSet.Size = new System.Drawing.Size(427, 439);
             this.dataGridViewDataSet.TabIndex = 5;
             // 
             // ACID
@@ -273,27 +290,28 @@
             this.ACID.HeaderText = "ACID";
             this.ACID.Name = "ACID";
             this.ACID.ReadOnly = true;
-            this.ACID.Width = 50;
+            this.ACID.Width = 57;
             // 
             // Column1
             // 
             this.Column1.HeaderText = "LAT";
             this.Column1.Name = "Column1";
             this.Column1.ReadOnly = true;
-            this.Column1.Width = 50;
+            this.Column1.Width = 60;
             // 
             // LON
             // 
             this.LON.HeaderText = "LON";
             this.LON.Name = "LON";
             this.LON.ReadOnly = true;
-            this.LON.Width = 50;
+            this.LON.Width = 60;
             // 
             // Time
             // 
             this.Time.HeaderText = "Time";
             this.Time.Name = "Time";
             this.Time.ReadOnly = true;
+            this.Time.Width = 130;
             // 
             // FL
             // 
@@ -309,16 +327,100 @@
             this.ACUR.ReadOnly = true;
             this.ACUR.Width = 30;
             // 
+            // comboBoxCriteria
+            // 
+            this.comboBoxCriteria.FormattingEnabled = true;
+            this.comboBoxCriteria.Items.AddRange(new object[] {
+            "No Filter",
+            "ACID & Time",
+            "Time Only",
+            "ACID Only"});
+            this.comboBoxCriteria.Location = new System.Drawing.Point(83, 27);
+            this.comboBoxCriteria.Name = "comboBoxCriteria";
+            this.comboBoxCriteria.Size = new System.Drawing.Size(136, 21);
+            this.comboBoxCriteria.TabIndex = 4;
+            this.comboBoxCriteria.SelectedIndexChanged += new System.EventHandler(this.comboBoxCriteria_SelectedIndexChanged);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(80, 11);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(62, 13);
+            this.label5.TabIndex = 5;
+            this.label5.Text = "Retrieve By";
+            // 
+            // comboBoxACID
+            // 
+            this.comboBoxACID.FormattingEnabled = true;
+            this.comboBoxACID.Location = new System.Drawing.Point(110, 54);
+            this.comboBoxACID.Name = "comboBoxACID";
+            this.comboBoxACID.Size = new System.Drawing.Size(109, 21);
+            this.comboBoxACID.TabIndex = 6;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(80, 57);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(32, 13);
+            this.label6.TabIndex = 7;
+            this.label6.Text = "ACID";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(68, 91);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(63, 13);
+            this.label7.TabIndex = 8;
+            this.label7.Text = "Time ahead";
+            // 
+            // numericUpDownHrs
+            // 
+            this.numericUpDownHrs.Location = new System.Drawing.Point(137, 89);
+            this.numericUpDownHrs.Maximum = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
+            this.numericUpDownHrs.Name = "numericUpDownHrs";
+            this.numericUpDownHrs.Size = new System.Drawing.Size(32, 20);
+            this.numericUpDownHrs.TabIndex = 9;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(170, 89);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(13, 17);
+            this.label8.TabIndex = 10;
+            this.label8.Text = ":";
+            // 
+            // numericUpDownMin
+            // 
+            this.numericUpDownMin.Location = new System.Drawing.Point(184, 89);
+            this.numericUpDownMin.Maximum = new decimal(new int[] {
+            59,
+            0,
+            0,
+            0});
+            this.numericUpDownMin.Name = "numericUpDownMin";
+            this.numericUpDownMin.Size = new System.Drawing.Size(32, 20);
+            this.numericUpDownMin.TabIndex = 11;
+            // 
             // PredictionControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(381, 608);
+            this.ClientSize = new System.Drawing.Size(440, 608);
             this.Controls.Add(this.dataGridViewDataSet);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.button2);
             this.MinimumSize = new System.Drawing.Size(383, 38);
             this.Name = "PredictionControl";
             this.Text = "Prediction Control";
@@ -331,6 +433,8 @@
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownHrs)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownMin)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -363,6 +467,14 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Time;
         private System.Windows.Forms.DataGridViewTextBoxColumn FL;
         private System.Windows.Forms.DataGridViewTextBoxColumn ACUR;
+        private System.Windows.Forms.ComboBox comboBoxCriteria;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.ComboBox comboBoxACID;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.NumericUpDown numericUpDownHrs;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.NumericUpDown numericUpDownMin;
 
 
 

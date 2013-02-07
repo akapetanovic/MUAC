@@ -84,29 +84,29 @@ namespace AsterixDisplayAnalyser
             //                    acc
             //                FROM " + PredictionTable;
 
-            //            // All data only latest tracks
-            //            string sql = @" 
-            //                SELECT
-            //                    acid,
-            //                    max(time),
-            //                    lat,
-            //                    lon,
-            //                    fl,
-            //                    acc
-            //                FROM " + PredictionTable +
-            //                " WHERE 1 GROUP by acid ORDER by time DESC";
-
-            // Get the data for ceratin time range
+            // All data only latest tracks
             string sql = @" 
-                SELECT
-                    acid,
-                    time,
-                    lat,
-                    lon,
-                    fl,
-                    acc
-                FROM " + PredictionTable +
-                " WHERE time BETWEEN '2013-01-29 10:14:00' AND '2013-01-29 10:14:00' GROUP by acid ORDER by time DESC";
+                            SELECT
+                                acid,
+                                max(time),
+                                lat,
+                                lon,
+                                fl,
+                                acc
+                            FROM " + PredictionTable +
+                " WHERE 1 GROUP by acid ORDER by time DESC";
+
+//            // Get the data for ceratin time range
+//            string sql = @" 
+//                SELECT
+//                    acid,
+//                    time,
+//                    lat,
+//                    lon,
+//                    fl,
+//                    acc
+//                FROM " + PredictionTable +
+//                " WHERE time BETWEEN '2013-01-29 10:14:00' AND '2013-01-29 10:14:00' GROUP by acid ORDER by time DESC";
 
             MySqlConnection conn = new MySqlConnection(connString);
             try

@@ -196,7 +196,7 @@ namespace AsterixDisplayAnalyser
 
             this.labelConnIpAndPort.Text = SharedData.CurrentMulticastAddress.ToString() + " : " + Port;
             this.labelLocalInterface.Text = SharedData.CurrentInterfaceIPAddress.ToString();
-            this.Text = "AMER KAPETANOVIC - ASTERIX DARR  2.7";
+            this.Text = "CBT Real Time 1.0";
         }
 
         // Display menu box to enable users to set up connection(s)

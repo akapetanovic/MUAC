@@ -40,12 +40,18 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
-            this.label4 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.button2 = new System.Windows.Forms.Button();
+            this.numericUpDownMin = new System.Windows.Forms.NumericUpDown();
+            this.numericUpDownHrs = new System.Windows.Forms.NumericUpDown();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.comboBoxACID = new System.Windows.Forms.ComboBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.comboBoxCriteria = new System.Windows.Forms.ComboBox();
             this.radioButton3 = new System.Windows.Forms.RadioButton();
             this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.button2 = new System.Windows.Forms.Button();
             this.dataGridViewDataSet = new System.Windows.Forms.DataGridView();
             this.ACID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -53,20 +59,17 @@
             this.Time = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.FL = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ACUR = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.comboBoxCriteria = new System.Windows.Forms.ComboBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.comboBoxACID = new System.Windows.Forms.ComboBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.numericUpDownHrs = new System.Windows.Forms.NumericUpDown();
+            this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.numericUpDownMin = new System.Windows.Forms.NumericUpDown();
+            this.trackBarPrediction = new System.Windows.Forms.TrackBar();
+            this.labelPredictionTimeReadout = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownHrs)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownMin)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownHrs)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBarPrediction)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -197,19 +200,11 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(165, 124);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(60, 13);
-            this.label4.TabIndex = 3;
-            this.label4.Text = "DATA SET";
-            // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.numericUpDownMin);
             this.groupBox3.Controls.Add(this.label8);
+            this.groupBox3.Controls.Add(this.label9);
+            this.groupBox3.Controls.Add(this.numericUpDownMin);
             this.groupBox3.Controls.Add(this.numericUpDownHrs);
             this.groupBox3.Controls.Add(this.label7);
             this.groupBox3.Controls.Add(this.label6);
@@ -224,7 +219,125 @@
             this.groupBox3.Size = new System.Drawing.Size(222, 118);
             this.groupBox3.TabIndex = 4;
             this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Data Set";
+            this.groupBox3.Text = "Data Lookup Settings";
+            // 
+            // numericUpDownMin
+            // 
+            this.numericUpDownMin.Location = new System.Drawing.Point(155, 89);
+            this.numericUpDownMin.Maximum = new decimal(new int[] {
+            59,
+            0,
+            0,
+            0});
+            this.numericUpDownMin.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.numericUpDownMin.Name = "numericUpDownMin";
+            this.numericUpDownMin.Size = new System.Drawing.Size(32, 20);
+            this.numericUpDownMin.TabIndex = 11;
+            this.numericUpDownMin.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
+            // numericUpDownHrs
+            // 
+            this.numericUpDownHrs.Location = new System.Drawing.Point(110, 89);
+            this.numericUpDownHrs.Maximum = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
+            this.numericUpDownHrs.Name = "numericUpDownHrs";
+            this.numericUpDownHrs.Size = new System.Drawing.Size(32, 20);
+            this.numericUpDownHrs.TabIndex = 9;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(41, 91);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(63, 13);
+            this.label7.TabIndex = 8;
+            this.label7.Text = "Time ahead";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(71, 64);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(32, 13);
+            this.label6.TabIndex = 7;
+            this.label6.Text = "ACID";
+            // 
+            // comboBoxACID
+            // 
+            this.comboBoxACID.FormattingEnabled = true;
+            this.comboBoxACID.Location = new System.Drawing.Point(107, 61);
+            this.comboBoxACID.Name = "comboBoxACID";
+            this.comboBoxACID.Size = new System.Drawing.Size(109, 21);
+            this.comboBoxACID.TabIndex = 6;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(77, 18);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(62, 13);
+            this.label5.TabIndex = 5;
+            this.label5.Text = "Retrieve By";
+            // 
+            // comboBoxCriteria
+            // 
+            this.comboBoxCriteria.FormattingEnabled = true;
+            this.comboBoxCriteria.Items.AddRange(new object[] {
+            "No Filter",
+            "ACID & Time",
+            "Time Only",
+            "ACID Only"});
+            this.comboBoxCriteria.Location = new System.Drawing.Point(80, 34);
+            this.comboBoxCriteria.Name = "comboBoxCriteria";
+            this.comboBoxCriteria.Size = new System.Drawing.Size(136, 21);
+            this.comboBoxCriteria.TabIndex = 4;
+            this.comboBoxCriteria.SelectedIndexChanged += new System.EventHandler(this.comboBoxCriteria_SelectedIndexChanged);
+            // 
+            // radioButton3
+            // 
+            this.radioButton3.AutoSize = true;
+            this.radioButton3.Location = new System.Drawing.Point(4, 56);
+            this.radioButton3.Name = "radioButton3";
+            this.radioButton3.Size = new System.Drawing.Size(61, 17);
+            this.radioButton3.TabIndex = 2;
+            this.radioButton3.Text = "Table 3";
+            this.radioButton3.UseVisualStyleBackColor = true;
+            this.radioButton3.CheckedChanged += new System.EventHandler(this.radioButton3_CheckedChanged);
+            // 
+            // radioButton2
+            // 
+            this.radioButton2.AutoSize = true;
+            this.radioButton2.Location = new System.Drawing.Point(4, 39);
+            this.radioButton2.Name = "radioButton2";
+            this.radioButton2.Size = new System.Drawing.Size(61, 17);
+            this.radioButton2.TabIndex = 1;
+            this.radioButton2.Text = "Table 2";
+            this.radioButton2.UseVisualStyleBackColor = true;
+            this.radioButton2.CheckedChanged += new System.EventHandler(this.radioButton2_CheckedChanged);
+            // 
+            // radioButton1
+            // 
+            this.radioButton1.AutoSize = true;
+            this.radioButton1.Checked = true;
+            this.radioButton1.Location = new System.Drawing.Point(4, 22);
+            this.radioButton1.Name = "radioButton1";
+            this.radioButton1.Size = new System.Drawing.Size(61, 17);
+            this.radioButton1.TabIndex = 0;
+            this.radioButton1.TabStop = true;
+            this.radioButton1.Text = "Table 1";
+            this.radioButton1.UseVisualStyleBackColor = true;
+            this.radioButton1.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
             // 
             // button2
             // 
@@ -235,38 +348,6 @@
             this.button2.Text = "Get Data";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // radioButton3
-            // 
-            this.radioButton3.AutoSize = true;
-            this.radioButton3.Location = new System.Drawing.Point(7, 49);
-            this.radioButton3.Name = "radioButton3";
-            this.radioButton3.Size = new System.Drawing.Size(61, 17);
-            this.radioButton3.TabIndex = 2;
-            this.radioButton3.Text = "Table 3";
-            this.radioButton3.UseVisualStyleBackColor = true;
-            // 
-            // radioButton2
-            // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(7, 32);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(61, 17);
-            this.radioButton2.TabIndex = 1;
-            this.radioButton2.Text = "Table 2";
-            this.radioButton2.UseVisualStyleBackColor = true;
-            // 
-            // radioButton1
-            // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Checked = true;
-            this.radioButton1.Location = new System.Drawing.Point(7, 15);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(61, 17);
-            this.radioButton1.TabIndex = 0;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "Table 1";
-            this.radioButton1.UseVisualStyleBackColor = true;
             // 
             // dataGridViewDataSet
             // 
@@ -279,10 +360,10 @@
             this.Time,
             this.FL,
             this.ACUR});
-            this.dataGridViewDataSet.Location = new System.Drawing.Point(10, 140);
+            this.dataGridViewDataSet.Location = new System.Drawing.Point(10, 178);
             this.dataGridViewDataSet.Name = "dataGridViewDataSet";
             this.dataGridViewDataSet.ReadOnly = true;
-            this.dataGridViewDataSet.Size = new System.Drawing.Size(427, 439);
+            this.dataGridViewDataSet.Size = new System.Drawing.Size(427, 401);
             this.dataGridViewDataSet.TabIndex = 5;
             // 
             // ACID
@@ -327,97 +408,54 @@
             this.ACUR.ReadOnly = true;
             this.ACUR.Width = 30;
             // 
-            // comboBoxCriteria
+            // label9
             // 
-            this.comboBoxCriteria.FormattingEnabled = true;
-            this.comboBoxCriteria.Items.AddRange(new object[] {
-            "No Filter",
-            "ACID & Time",
-            "Time Only",
-            "ACID Only"});
-            this.comboBoxCriteria.Location = new System.Drawing.Point(83, 27);
-            this.comboBoxCriteria.Name = "comboBoxCriteria";
-            this.comboBoxCriteria.Size = new System.Drawing.Size(136, 21);
-            this.comboBoxCriteria.TabIndex = 4;
-            this.comboBoxCriteria.SelectedIndexChanged += new System.EventHandler(this.comboBoxCriteria_SelectedIndexChanged);
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(80, 11);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(62, 13);
-            this.label5.TabIndex = 5;
-            this.label5.Text = "Retrieve By";
-            // 
-            // comboBoxACID
-            // 
-            this.comboBoxACID.FormattingEnabled = true;
-            this.comboBoxACID.Location = new System.Drawing.Point(110, 54);
-            this.comboBoxACID.Name = "comboBoxACID";
-            this.comboBoxACID.Size = new System.Drawing.Size(109, 21);
-            this.comboBoxACID.TabIndex = 6;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(80, 57);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(32, 13);
-            this.label6.TabIndex = 7;
-            this.label6.Text = "ACID";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(68, 91);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(63, 13);
-            this.label7.TabIndex = 8;
-            this.label7.Text = "Time ahead";
-            // 
-            // numericUpDownHrs
-            // 
-            this.numericUpDownHrs.Location = new System.Drawing.Point(137, 89);
-            this.numericUpDownHrs.Maximum = new decimal(new int[] {
-            10,
-            0,
-            0,
-            0});
-            this.numericUpDownHrs.Name = "numericUpDownHrs";
-            this.numericUpDownHrs.Size = new System.Drawing.Size(32, 20);
-            this.numericUpDownHrs.TabIndex = 9;
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(142, 92);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(13, 13);
+            this.label9.TabIndex = 12;
+            this.label9.Text = "h";
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(170, 89);
+            this.label8.Location = new System.Drawing.Point(187, 92);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(13, 17);
-            this.label8.TabIndex = 10;
-            this.label8.Text = ":";
+            this.label8.Size = new System.Drawing.Size(23, 13);
+            this.label8.TabIndex = 13;
+            this.label8.Text = "min";
             // 
-            // numericUpDownMin
+            // trackBarPrediction
             // 
-            this.numericUpDownMin.Location = new System.Drawing.Point(184, 89);
-            this.numericUpDownMin.Maximum = new decimal(new int[] {
-            59,
-            0,
-            0,
-            0});
-            this.numericUpDownMin.Name = "numericUpDownMin";
-            this.numericUpDownMin.Size = new System.Drawing.Size(32, 20);
-            this.numericUpDownMin.TabIndex = 11;
+            this.trackBarPrediction.LargeChange = 60;
+            this.trackBarPrediction.Location = new System.Drawing.Point(12, 127);
+            this.trackBarPrediction.Maximum = 600;
+            this.trackBarPrediction.Name = "trackBarPrediction";
+            this.trackBarPrediction.Size = new System.Drawing.Size(425, 45);
+            this.trackBarPrediction.TabIndex = 6;
+            this.trackBarPrediction.TickFrequency = 60;
+            this.trackBarPrediction.Value = 1;
+            this.trackBarPrediction.ValueChanged += new System.EventHandler(this.trackBarPrediction_ValueChanged);
+            // 
+            // labelPredictionTimeReadout
+            // 
+            this.labelPredictionTimeReadout.AutoSize = true;
+            this.labelPredictionTimeReadout.Location = new System.Drawing.Point(18, 158);
+            this.labelPredictionTimeReadout.Name = "labelPredictionTimeReadout";
+            this.labelPredictionTimeReadout.Size = new System.Drawing.Size(68, 13);
+            this.labelPredictionTimeReadout.TabIndex = 7;
+            this.labelPredictionTimeReadout.Text = "00 h : 00 min";
             // 
             // PredictionControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(440, 608);
+            this.Controls.Add(this.labelPredictionTimeReadout);
+            this.Controls.Add(this.trackBarPrediction);
             this.Controls.Add(this.dataGridViewDataSet);
             this.Controls.Add(this.groupBox3);
-            this.Controls.Add(this.label4);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.button2);
@@ -432,9 +470,10 @@
             this.groupBox2.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownHrs)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownMin)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownHrs)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBarPrediction)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -454,7 +493,6 @@
         private System.Windows.Forms.Label labelPswd;
         private System.Windows.Forms.Label labelUser;
         private System.Windows.Forms.Label labelServer;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.RadioButton radioButton3;
         private System.Windows.Forms.RadioButton radioButton2;
@@ -473,8 +511,11 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.NumericUpDown numericUpDownHrs;
-        private System.Windows.Forms.Label label8;
         private System.Windows.Forms.NumericUpDown numericUpDownMin;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.TrackBar trackBarPrediction;
+        private System.Windows.Forms.Label labelPredictionTimeReadout;
 
 
 

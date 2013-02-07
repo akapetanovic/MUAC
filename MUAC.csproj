@@ -295,6 +295,7 @@
     <Compile Include="Prediction\ConnectionSettings.Designer.cs">
       <DependentUpon>ConnectionSettings.cs</DependentUpon>
     </Compile>
+    <Compile Include="Prediction\MySqlDateTimeUtility.cs" />
     <Compile Include="Prediction\MySqlProvider.cs" />
     <Compile Include="Prediction\PredictionControl.cs">
       <SubType>Form</SubType>

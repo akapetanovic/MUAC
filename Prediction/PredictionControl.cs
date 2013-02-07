@@ -20,6 +20,8 @@ namespace AsterixDisplayAnalyser
         {
             SyncConnectionData();
             this.comboBoxCriteria.SelectedIndex = 0;
+            // Initialise Prediction Time Lookahead to the currently selected value
+            this.trackBarPrediction.Value = SharedData.LookAheadTime.Minutes + (SharedData.LookAheadTime.Hours * 60);
         }
 
         private void SyncConnectionData()
@@ -53,8 +55,42 @@ namespace AsterixDisplayAnalyser
 
         private void button2_Click(object sender, EventArgs e)
         {
-            MySqlProvider MySQL = new MySqlProvider();
+            // Get all available data
+            if (this.comboBoxCriteria.SelectedIndex == 0)
+            {
+                System.Collections.Generic.List<MySqlProvider.PredictionDataSetOneRow> DataRetreived = GetAllData();
 
+                this.dataGridViewDataSet.Rows.Clear();
+                foreach (MySqlProvider.PredictionDataSetOneRow Item in DataRetreived)
+                    this.dataGridViewDataSet.Rows.Add(Item.ACID, Item.Lat, Item.Lon, Item.Time, Item.FL, Item.Accuracy);
+            }
+            // Get data based on ACID and Time filter
+            else if (this.comboBoxCriteria.SelectedIndex == 1)
+            {
+            }
+            // Get data based on Time only
+            else if (this.comboBoxCriteria.SelectedIndex == 2)
+            {
+                System.Collections.Generic.List<MySqlProvider.PredictionDataSetOneRow> DataRetreived = GetAllDataForDateTime();
+
+                this.dataGridViewDataSet.Rows.Clear();
+                foreach (MySqlProvider.PredictionDataSetOneRow Item in DataRetreived)
+                    this.dataGridViewDataSet.Rows.Add(Item.ACID, Item.Lat, Item.Lon, Item.Time, Item.FL, Item.Accuracy);
+            }
+            // Get data based on ACID only
+            else if (this.comboBoxCriteria.SelectedIndex == 3)
+            {
+                System.Collections.Generic.List<MySqlProvider.PredictionDataSetOneRow> DataRetreived = GetAllDataForACID();
+
+                this.dataGridViewDataSet.Rows.Clear();
+                foreach (MySqlProvider.PredictionDataSetOneRow Item in DataRetreived)
+                    this.dataGridViewDataSet.Rows.Add(Item.ACID, Item.Lat, Item.Lon, Item.Time, Item.FL, Item.Accuracy);
+            }
+        }
+
+        // This method return Table Type choosen by the user
+        private MySqlProvider.PredictionTableNumberType GetTableChoice()
+        {
             MySqlProvider.PredictionTableNumberType Table;
             if (this.radioButton1.Checked)
                 Table = MySqlProvider.PredictionTableNumberType.One;
@@ -62,22 +98,46 @@ namespace AsterixDisplayAnalyser
                 Table = MySqlProvider.PredictionTableNumberType.Two;
             else
                 Table = MySqlProvider.PredictionTableNumberType.Three;
+            return Table;
+        }
+        
+        // This method returns a list of ALL available data from the pre-selected table
+        // It is then up to the user to decide what data to use
+        private System.Collections.Generic.List<MySqlProvider.PredictionDataSetOneRow> GetAllData()
+        {
+            MySqlProvider MySQL = new MySqlProvider();
+            return MySQL.GetAllData(GetTableChoice());
+        }
 
+        // This method returns a list of ALL available data from the pre-selected table
+        // for the given ACID.It is then up to the user to decide what data to use
+        private System.Collections.Generic.List<MySqlProvider.PredictionDataSetOneRow> GetAllDataForACID()
+        {
+            MySqlProvider MySQL = new MySqlProvider();
+            return MySQL.GetAllDataForACID(GetTableChoice(), this.comboBoxACID.Text);
+        }
 
-            System.Collections.Generic.List<MySqlProvider.PredictionDataSetOneRow> DataRetreived =
-           MySQL.GetDataSet(Table);
+        // This method returns a list of ALL available data from the pre-selected table
+        // for the given DateTime.It is then up to the user to decide what data to use
+        private System.Collections.Generic.List<MySqlProvider.PredictionDataSetOneRow> GetAllDataForDateTime()
+        {
+            MySqlProvider MySQL = new MySqlProvider();
+            TimeSpan TimeToAdd = new TimeSpan(0, 0, 0);
+            return MySQL.GetAllDataForTime(GetTableChoice(), TimeToAdd);
+        }
 
-            this.dataGridViewDataSet.Rows.Clear();
-            foreach (MySqlProvider.PredictionDataSetOneRow Item in DataRetreived)
-            {
-                this.dataGridViewDataSet.Rows.Add(Item.ACID, Item.Lat, Item.Lon, Item.Time, Item.FL, Item.Accuracy);
-            }
+        // This method returns a list of ALL available ACIDs from the currently selected table
+        private System.Collections.Generic.List<MySqlProvider.PredictionDataSetOneRow> GetAllACIDsDataDistinct()
+        {
+            MySqlProvider MySQL = new MySqlProvider();
+            return MySQL.GetAllACIDsDataDistinct(GetTableChoice());
         }
 
         private void comboBoxCriteria_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (this.comboBoxCriteria.SelectedIndex == 0)
             {
+                comboBoxACID.Items.Clear();
                 this.comboBoxACID.Enabled = false;
                 this.numericUpDownHrs.Enabled = false;
                 this.numericUpDownMin.Enabled = false;
@@ -91,6 +151,7 @@ namespace AsterixDisplayAnalyser
             }
             else if (this.comboBoxCriteria.SelectedIndex == 2)
             {
+                comboBoxACID.Items.Clear();
                 this.comboBoxACID.Enabled = false;
                 this.numericUpDownHrs.Enabled = true;
                 this.numericUpDownMin.Enabled = true;
@@ -104,9 +165,46 @@ namespace AsterixDisplayAnalyser
             }
         }
 
+        // This method is to be called when ACID combobox is to 
+        // be populated with all available ACIDs from the prediction table
+        // so they can be presented to the user as available ACIDs in the filter.
         private void PupulateACID_ComboBox()
         {
+            if (this.comboBoxACID.Enabled == true)
+            {
+                System.Collections.Generic.List<MySqlProvider.PredictionDataSetOneRow> DataRetreived = GetAllACIDsDataDistinct();
 
+                this.comboBoxACID.Items.Clear();
+                foreach (MySqlProvider.PredictionDataSetOneRow Item in DataRetreived)
+                    this.comboBoxACID.Items.Add(Item.ACID);
+
+                if (this.comboBoxACID.Items.Count > 0)
+                this.comboBoxACID.SelectedIndex = 0;
+            }
+        }
+
+        private void radioButton1_CheckedChanged(object sender, EventArgs e)
+        {
+            PupulateACID_ComboBox();
+        }
+
+        private void radioButton2_CheckedChanged(object sender, EventArgs e)
+        {
+            PupulateACID_ComboBox();
+        }
+
+        private void radioButton3_CheckedChanged(object sender, EventArgs e)
+        {
+            PupulateACID_ComboBox();
+        }
+
+        private void trackBarPrediction_ValueChanged(object sender, EventArgs e)
+        {
+            int h, min;
+            h = (int)Math.Floor(this.trackBarPrediction.Value / 60.0);
+            min = this.trackBarPrediction.Value - (h * 60);
+            this.labelPredictionTimeReadout.Text = h.ToString() + " h : " + min.ToString() + " min";
+            SharedData.LookAheadTime = new TimeSpan(h, min, 0);
         }
     }
 }

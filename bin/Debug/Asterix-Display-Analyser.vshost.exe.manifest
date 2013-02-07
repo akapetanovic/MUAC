@@ -43,14 +43,19 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Asterix-Display-Analyser.exe" size="544768">
+    <dependentAssembly dependencyType="preRequisite" allowDelayedBinding="true">
+      <assemblyIdentity name="MySql.Data" version="6.5.5.0" publicKeyToken="C5687FC88969C44D" language="neutral" processorArchitecture="msil" />
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Asterix-Display-Analyser.exe" size="555520">
       <assemblyIdentity name="Asterix-Display-Analyser" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>dWWj7Q/gT/+13CoF65S1sEYUXPk=</dsig:DigestValue>
+        <dsig:DigestValue>42GIiJOryVwvRJD4XPsXNGTg190=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -114,13 +119,13 @@
       </hash>
     </dependentAssembly>
   </dependency>
-  <file name="Asterix-Display-Analyser.exe.config" size="7413">
+  <file name="Asterix-Display-Analyser.exe.config" size="7796">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>MaLrSL5jW+H11+rB4060kgLEyxA=</dsig:DigestValue>
+      <dsig:DigestValue>NwzEbZAuoMlxP95M4xsPPT/15/8=</dsig:DigestValue>
     </hash>
   </file>
   <file name="DARR.ico" size="1078">

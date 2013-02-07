@@ -27,7 +27,7 @@ namespace AsterixDisplayAnalyser
         //Debug MyDebug = new Debug();
 
         ////////////////////////
-
+       
 
 
         // Static Map Overlay
@@ -2843,6 +2843,18 @@ namespace AsterixDisplayAnalyser
         private void labelTemp_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void predictionSettingsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            PredictionControl MyPredictionCOntrol = new PredictionControl();
+            MyPredictionCOntrol.Show();
+        }
+
+        private void predictionControlToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            PredictionControl MPC = new PredictionControl();
+            MPC.Show();
         }
 
     }

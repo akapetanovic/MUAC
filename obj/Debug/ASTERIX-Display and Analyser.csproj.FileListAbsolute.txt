@@ -94,7 +94,6 @@ C:\Users\bhdca\Documents\Visual Studio 2010\Projects\MUAC\bin\Debug\Google.KML.d
 C:\Users\bhdca\Documents\Visual Studio 2010\Projects\MUAC\bin\Debug\ICSharpCode.SharpZipLib.dll
 C:\Users\bhdca\Documents\Visual Studio 2010\Projects\MUAC\bin\Debug\GMap.NET.Core.xml
 C:\Users\bhdca\Documents\Visual Studio 2010\Projects\MUAC\bin\Debug\GMap.NET.WindowsForms.xml
-C:\Users\bhdca\Documents\Visual Studio 2010\Projects\MUAC\obj\Debug\ASTERIX-Display and Analyser.csprojResolveAssemblyReference.cache
 C:\Users\bhdca\Documents\Visual Studio 2010\Projects\MUAC\obj\Debug\AsterixDisplayAnalyser.FrmExtendedLabel.resources
 C:\Users\bhdca\Documents\Visual Studio 2010\Projects\MUAC\obj\Debug\AsterixDisplayAnalyser.UpdateHDG.resources
 C:\Users\bhdca\Documents\Visual Studio 2010\Projects\MUAC\obj\Debug\AsterixDisplayAnalyser.UpdateSPD.resources
@@ -122,3 +121,5 @@ C:\Users\bhdca\Documents\Visual Studio 2010\Projects\MUAC\obj\Debug\AsterixDispl
 C:\Users\bhdca\Documents\Visual Studio 2010\Projects\MUAC\obj\Debug\ASTERIX-Display and Analyser.csproj.GenerateResource.Cache
 C:\Users\bhdca\Documents\Visual Studio 2010\Projects\MUAC\obj\Debug\Asterix-Display-Analyser.exe.manifest
 C:\Users\bhdca\Documents\Visual Studio 2010\Projects\MUAC\obj\Debug\Asterix-Display-Analyser.application
+C:\Users\bhdca\Documents\Visual Studio 2010\Projects\MUAC\obj\Debug\AsterixDisplayAnalyser.PredictionControl.resources
+C:\Users\bhdca\Documents\Visual Studio 2010\Projects\MUAC\obj\Debug\AsterixDisplayAnalyser.ConnectionSettings.resources

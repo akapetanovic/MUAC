@@ -658,5 +658,41 @@ namespace AsterixDisplayAnalyser.Properties {
                 this["SEepToolUpdateRate"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("localhost")]
+        public string MySqlServer {
+            get {
+                return ((string)(this["MySqlServer"]));
+            }
+            set {
+                this["MySqlServer"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("root")]
+        public string MySqlUser {
+            get {
+                return ((string)(this["MySqlUser"]));
+            }
+            set {
+                this["MySqlUser"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("prediction")]
+        public string mySqlDatabase {
+            get {
+                return ((string)(this["mySqlDatabase"]));
+            }
+            set {
+                this["mySqlDatabase"] = value;
+            }
+        }
     }
 }

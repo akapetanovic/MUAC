@@ -46,6 +46,10 @@ namespace AsterixDisplayAnalyser
         public static string CurrentInterfaceIPAddress = "N/A";
         public static int Current_Port = 0;
 
+        public static bool Prediction1_Enabled = false;
+        public static bool Prediction2_Enabled = false;
+        public static bool Prediction3_Enabled = false;
+
         public static void ResetConnectionParameters()
         {
             ConnName = "N/A";

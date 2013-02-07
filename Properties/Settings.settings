@@ -161,5 +161,14 @@
     <Setting Name="SEepToolUpdateRate" Type="System.Int32" Scope="User">
       <Value Profile="(Default)">4</Value>
     </Setting>
+    <Setting Name="MySqlServer" Type="System.String" Scope="User">
+      <Value Profile="(Default)">localhost</Value>
+    </Setting>
+    <Setting Name="MySqlUser" Type="System.String" Scope="User">
+      <Value Profile="(Default)">root</Value>
+    </Setting>
+    <Setting Name="mySqlDatabase" Type="System.String" Scope="User">
+      <Value Profile="(Default)">prediction</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

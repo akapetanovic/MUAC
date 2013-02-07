@@ -84,6 +84,10 @@
     </Reference>
     <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="Microsoft.VisualBasic.PowerPacks.Vs, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="MySql.Data, Version=6.5.5.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\Program Files\MySQL\MySQL Connector Net 6.5.5\Assemblies\v4.0\MySql.Data.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
@@ -285,6 +289,19 @@
     <Compile Include="MAIN\frmDebug.Designer.cs">
       <DependentUpon>frmDebug.cs</DependentUpon>
     </Compile>
+    <Compile Include="Prediction\ConnectionSettings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Prediction\ConnectionSettings.Designer.cs">
+      <DependentUpon>ConnectionSettings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Prediction\MySqlProvider.cs" />
+    <Compile Include="Prediction\PredictionControl.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Prediction\PredictionControl.Designer.cs">
+      <DependentUpon>PredictionControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="REC_AND_FORWARD\AppendDateTime.cs" />
     <Compile Include="GOOGLE EARTH\GoogleEarthProvider.cs">
       <SubType>Form</SubType>
@@ -483,6 +500,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MAIN\frmDebug.resx">
       <DependentUpon>frmDebug.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Prediction\ConnectionSettings.resx">
+      <DependentUpon>ConnectionSettings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Prediction\PredictionControl.resx">
+      <DependentUpon>PredictionControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="REC_AND_FORWARD\FrmAstxRecFrwdForm.resx">
       <DependentUpon>FrmAstxRecFrwdForm.cs</DependentUpon>

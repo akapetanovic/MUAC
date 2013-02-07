@@ -44,6 +44,7 @@
             this.replayToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.replayToRawToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.extendedLabelToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.predictionControlToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.resetDataBufferToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cAT001DataItemPresenceToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -368,7 +369,8 @@
             this.recorderAndDataForwarderToolStripMenuItem,
             this.replayToolStripMenuItem,
             this.replayToRawToolStripMenuItem,
-            this.extendedLabelToolStripMenuItem});
+            this.extendedLabelToolStripMenuItem,
+            this.predictionControlToolStripMenuItem});
             this.toolStripMenuItem2.ForeColor = System.Drawing.Color.Silver;
             this.toolStripMenuItem2.Name = "toolStripMenuItem2";
             this.toolStripMenuItem2.Size = new System.Drawing.Size(48, 20);
@@ -402,6 +404,13 @@
             this.extendedLabelToolStripMenuItem.Size = new System.Drawing.Size(227, 22);
             this.extendedLabelToolStripMenuItem.Text = "Extended Label";
             this.extendedLabelToolStripMenuItem.Click += new System.EventHandler(this.extendedLabelToolStripMenuItem_Click);
+            // 
+            // predictionControlToolStripMenuItem
+            // 
+            this.predictionControlToolStripMenuItem.Name = "predictionControlToolStripMenuItem";
+            this.predictionControlToolStripMenuItem.Size = new System.Drawing.Size(227, 22);
+            this.predictionControlToolStripMenuItem.Text = "Prediction Control";
+            this.predictionControlToolStripMenuItem.Click += new System.EventHandler(this.predictionControlToolStripMenuItem_Click);
             // 
             // toolsToolStripMenuItem
             // 
@@ -1435,15 +1444,15 @@
             gMapControl.Size = new System.Drawing.Size(1026, 702);
             gMapControl.TabIndex = 0;
             gMapControl.Zoom = 0D;
-            gMapControl.OnMarkerEnter += new GMap.NET.WindowsForms.MarkerEnter(this.gMapControl_OnMarkerEnter);
-            gMapControl.OnMapDrag += new GMap.NET.MapDrag(this.gMapControl_OnMapDrag);
-            gMapControl.OnMapZoomChanged += new GMap.NET.MapZoomChanged(this.gMapControl_OnMapZoomChanged);
-            gMapControl.Load += new System.EventHandler(this.gMapControl_Load);
-            gMapControl.MouseClick += new System.Windows.Forms.MouseEventHandler(this.gMapControl_MouseClick);
-            gMapControl.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.gMapControl_MouseDoubleClick);
-            gMapControl.MouseDown += new System.Windows.Forms.MouseEventHandler(this.gMapControl_MouseDown);
-            gMapControl.MouseMove += new System.Windows.Forms.MouseEventHandler(this.gMapControl_MouseMove);
-            gMapControl.MouseUp += new System.Windows.Forms.MouseEventHandler(this.gMapControl_MouseUp);
+            gMapControl.OnMarkerEnter += new GMap.NET.WindowsForms.MarkerEnter(gMapControl_OnMarkerEnter);
+            gMapControl.OnMapDrag += new GMap.NET.MapDrag(gMapControl_OnMapDrag);
+            gMapControl.OnMapZoomChanged += new GMap.NET.MapZoomChanged(gMapControl_OnMapZoomChanged);
+            gMapControl.Load += new System.EventHandler(gMapControl_Load);
+            gMapControl.MouseClick += new System.Windows.Forms.MouseEventHandler(gMapControl_MouseClick);
+            gMapControl.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(gMapControl_MouseDoubleClick);
+            gMapControl.MouseDown += new System.Windows.Forms.MouseEventHandler(gMapControl_MouseDown);
+            gMapControl.MouseMove += new System.Windows.Forms.MouseEventHandler(gMapControl_MouseMove);
+            gMapControl.MouseUp += new System.Windows.Forms.MouseEventHandler(gMapControl_MouseUp);
             // 
             // labelTargetCount
             // 
@@ -1879,7 +1888,6 @@
             // 
             this.textBoxSSRCode.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.textBoxSSRCode.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBoxSSRCode.Enabled = true;
             this.textBoxSSRCode.Location = new System.Drawing.Point(7, 101);
             this.textBoxSSRCode.Name = "textBoxSSRCode";
             this.textBoxSSRCode.Size = new System.Drawing.Size(95, 20);
@@ -1907,7 +1915,6 @@
             // comboBoxSSRFilterBox
             // 
             this.comboBoxSSRFilterBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.comboBoxSSRFilterBox.Enabled = true;
             this.comboBoxSSRFilterBox.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.comboBoxSSRFilterBox.ForeColor = System.Drawing.SystemColors.Desktop;
             this.comboBoxSSRFilterBox.FormattingEnabled = true;
@@ -2608,7 +2615,7 @@
             this.KeyPreview = true;
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "FormMain";
-            this.Text = "AMER KAPETANOVIC - ASTERIX DARR  2.0";
+            this.Text = "CBT Real Time";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormMain_FormClosed);
             this.Load += new System.EventHandler(this.FormMain_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FormMain_KeyDown);
@@ -2794,7 +2801,6 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.ComboBox comboBoxSSRFilterBox;
         private System.Windows.Forms.CheckBox checkBoxFilterBySSR;
-        public static GMap.NET.WindowsForms.GMapControl gMapControl;
         private System.Windows.Forms.TabPage tabPageAsterixMessages;
         private System.Windows.Forms.ListBox listBoxManFrame;
         private System.Windows.Forms.Label label3;
@@ -2881,6 +2887,8 @@
         private System.Windows.Forms.Label labelLat_Long;
         private System.Windows.Forms.ToolStripMenuItem extendedLabelToolStripMenuItem;
         private System.Windows.Forms.CheckBox checkBoxFullscreen;
+        private System.Windows.Forms.ToolStripMenuItem predictionControlToolStripMenuItem;
+        public static GMap.NET.WindowsForms.GMapControl gMapControl;
     }
 }
 

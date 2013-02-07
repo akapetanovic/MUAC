@@ -1,0 +1,623 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{3918301C-B46C-4913-9267-D73713C9E529}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>AsterixDisplayAnalyser</RootNamespace>
+    <AssemblyName>Asterix-Display-Analyser</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation />
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <TargetFrameworkProfile />
+    <PublishUrl>C:\Users\bhdca\Documents\Visual Studio 2010\Projects\ASTERIX-ANALYSER and DATA DISPLAY\Release\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>2.7.0.0</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <CreateDesktopShortcut>true</CreateDesktopShortcut>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>
+    </DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>C93B5F121E960B18F59E84E993B05356A520DE32</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>ASTERIX-Analyser1.0_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>false</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>DARR.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup />
+  <ItemGroup>
+    <Reference Include="GMap.NET.Core, Version=1.6.0.0, Culture=neutral, PublicKeyToken=b85b9027b614afef, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>GMap\GMap.NET.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="GMap.NET.WindowsForms, Version=1.6.0.0, Culture=neutral, PublicKeyToken=b85b9027b614afef, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>GMap\GMap.NET.WindowsForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.KML">
+      <HintPath>KML\bin\Release\Google.KML.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="Microsoft.VisualBasic.PowerPacks.Vs, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ASTERIX\CAT001\CAT01I130Types.cs" />
+    <Compile Include="ASTERIX\CAT001\CAT01I130UserData.cs" />
+    <Compile Include="ASTERIX\CAT001\CAT01I141Types.cs" />
+    <Compile Include="ASTERIX\CAT001\CAT01I141UserData.cs" />
+    <Compile Include="ASTERIX\CAT001\CAT01I050UserData.cs" />
+    <Compile Include="ASTERIX\CAT001\CAT01I050Types.cs" />
+    <Compile Include="ASTERIX\CAT001\CAT01I120Types.cs" />
+    <Compile Include="ASTERIX\CAT001\CAT01I120UserData.cs" />
+    <Compile Include="ASTERIX\CAT001\CAT01I131Types.cs" />
+    <Compile Include="ASTERIX\CAT001\CAT01I131UserData.cs" />
+    <Compile Include="ASTERIX\CAT001\CAT01I080Types.cs" />
+    <Compile Include="ASTERIX\CAT001\CAT01I080UserData.cs" />
+    <Compile Include="ASTERIX\CAT001\CAT01I100Types.cs" />
+    <Compile Include="ASTERIX\CAT001\CAT01I100UserData.cs" />
+    <Compile Include="ASTERIX\CAT001\CAT01I060Types.cs" />
+    <Compile Include="ASTERIX\CAT001\CAT01I060UserData.cs" />
+    <Compile Include="ASTERIX\CAT001\CAT01I030Types.cs" />
+    <Compile Include="ASTERIX\CAT001\CAT01I030UserData.cs" />
+    <Compile Include="ASTERIX\CAT001\CAT01I150Types.cs" />
+    <Compile Include="ASTERIX\CAT001\CAT01I150UserData.cs" />
+    <Compile Include="ASTERIX\CAT001\CAT01I170Types.cs" />
+    <Compile Include="ASTERIX\CAT001\CAT01I170UserData.cs" />
+    <Compile Include="ASTERIX\CAT001\CAT01I210Types.cs" />
+    <Compile Include="ASTERIX\CAT001\CAT01I210UserData.cs" />
+    <Compile Include="ASTERIX\CAT002\CAT02I000Types.cs" />
+    <Compile Include="ASTERIX\CAT002\CAT02I000UserData.cs" />
+    <Compile Include="ASTERIX\CAT002\CAT02I020Types.cs" />
+    <Compile Include="ASTERIX\CAT002\CAT02I020UserData.cs" />
+    <Compile Include="ASTERIX\CAT002\CAT02I030Types.cs" />
+    <Compile Include="ASTERIX\CAT002\CAT02I030UserData.cs" />
+    <Compile Include="ASTERIX\CAT002\CAT02I041Types.cs" />
+    <Compile Include="ASTERIX\CAT002\CAT02I041UserData.cs" />
+    <Compile Include="ASTERIX\CAT002\CAT02I050Types.cs" />
+    <Compile Include="ASTERIX\CAT002\CAT02I050UserData.cs" />
+    <Compile Include="ASTERIX\CAT002\CAT02I060Types.cs" />
+    <Compile Include="ASTERIX\CAT002\CAT02I060UserData.cs" />
+    <Compile Include="ASTERIX\CAT002\CAT02I070Types.cs" />
+    <Compile Include="ASTERIX\CAT002\CAT02I070UserData.cs" />
+    <Compile Include="ASTERIX\CAT002\CAT02I080Types.cs" />
+    <Compile Include="ASTERIX\CAT002\CAT02I080UserData.cs" />
+    <Compile Include="ASTERIX\CAT002\CAT02I090Types.cs" />
+    <Compile Include="ASTERIX\CAT002\CAT02I090UserData.cs" />
+    <Compile Include="ASTERIX\CAT002\CAT02I100Types.cs" />
+    <Compile Include="ASTERIX\CAT002\CAT02I100UserData.cs" />
+    <Compile Include="ASTERIX\CAT034\CAT34I000Types.cs" />
+    <Compile Include="ASTERIX\CAT034\CAT34I000UserData.cs" />
+    <Compile Include="ASTERIX\CAT034\CAT34I020Types.cs" />
+    <Compile Include="ASTERIX\CAT034\CAT34I020UserData.cs" />
+    <Compile Include="ASTERIX\CAT034\CAT34I030Types.cs" />
+    <Compile Include="ASTERIX\CAT034\CAT34I030UserData.cs" />
+    <Compile Include="ASTERIX\CAT034\CAT34I041Types.cs" />
+    <Compile Include="ASTERIX\CAT034\CAT34I041UserData.cs" />
+    <Compile Include="ASTERIX\CAT034\CAT34I050Types.cs" />
+    <Compile Include="ASTERIX\CAT034\CAT34I050UserData.cs" />
+    <Compile Include="ASTERIX\CAT034\CAT34I060Types.cs" />
+    <Compile Include="ASTERIX\CAT034\CAT34I060UserData.cs" />
+    <Compile Include="ASTERIX\CAT034\CAT34I070Types.cs" />
+    <Compile Include="ASTERIX\CAT034\CAT34I070UserData.cs" />
+    <Compile Include="ASTERIX\CAT034\CAT34I110Types.cs" />
+    <Compile Include="ASTERIX\CAT034\CAT34I110UserData.cs" />
+    <Compile Include="ASTERIX\CAT034\CAT34I090Types.cs" />
+    <Compile Include="ASTERIX\CAT034\CAT34I090UserData.cs" />
+    <Compile Include="ASTERIX\CAT034\CAT34I100Types.cs" />
+    <Compile Include="ASTERIX\CAT034\CAT34I100UserData.cs" />
+    <Compile Include="ASTERIX\CAT034\CAT34I120Types.cs" />
+    <Compile Include="ASTERIX\CAT034\CAT34I120UserData.cs" />
+    <Compile Include="ASTERIX\CAT048\CAT48I130Types.cs" />
+    <Compile Include="ASTERIX\CAT048\CAT48I220Types.cs" />
+    <Compile Include="ASTERIX\CAT048\CAT48I240Types.cs" />
+    <Compile Include="ASTERIX\CAT048\CAT48I250Types.cs" />
+    <Compile Include="ASTERIX\CAT048\CAT48I161Types.cs" />
+    <Compile Include="ASTERIX\CAT048\CAT48I042Types.cs" />
+    <Compile Include="ASTERIX\CAT048\CAT48I200Types.cs" />
+    <Compile Include="ASTERIX\CAT048\CAT48I170Types.cs" />
+    <Compile Include="ASTERIX\CAT048\CAT48I210Types.cs" />
+    <Compile Include="ASTERIX\CAT048\CAT48I030Types.cs" />
+    <Compile Include="ASTERIX\CAT048\CAT48I080Types.cs" />
+    <Compile Include="ASTERIX\CAT048\CAT48I100Types.cs" />
+    <Compile Include="ASTERIX\CAT048\CAT48I110Types.cs" />
+    <Compile Include="ASTERIX\CAT048\CAT48I120Types.cs" />
+    <Compile Include="ASTERIX\CAT048\CAT48I230Types.cs" />
+    <Compile Include="ASTERIX\CAT048\CAT48I260Types.cs" />
+    <Compile Include="ASTERIX\CAT048\CAT48I055Types.cs" />
+    <Compile Include="ASTERIX\CAT048\CAT48I050Types.cs" />
+    <Compile Include="ASTERIX\CAT048\CAT48I065Types.cs" />
+    <Compile Include="ASTERIX\CAT048\CAT48I060Types.cs" />
+    <Compile Include="ASTERIX\CAT048\CAT48I220UserData.cs" />
+    <Compile Include="ASTERIX\CAT048\CAT48I240UserData.cs" />
+    <Compile Include="ASTERIX\CAT048\CAT48I250UserData.cs" />
+    <Compile Include="ASTERIX\CAT048\CAT48I161UserData.cs" />
+    <Compile Include="ASTERIX\CAT048\CAT48I042UserData.cs" />
+    <Compile Include="ASTERIX\CAT048\CAT48I200UserData.cs" />
+    <Compile Include="ASTERIX\CAT048\CAT48I170UserData.cs" />
+    <Compile Include="ASTERIX\CAT048\CAT48I210UserData.cs" />
+    <Compile Include="ASTERIX\CAT048\CAT48I030UserData.cs" />
+    <Compile Include="ASTERIX\CAT048\CAT48I080UserData.cs" />
+    <Compile Include="ASTERIX\CAT048\CAT48I100UserData.cs" />
+    <Compile Include="ASTERIX\CAT048\CAT48I110UserData.cs" />
+    <Compile Include="ASTERIX\CAT048\CAT48I120UserData.cs" />
+    <Compile Include="ASTERIX\CAT048\CAT48I230UserData.cs" />
+    <Compile Include="ASTERIX\CAT048\CAT48I055UserData.cs" />
+    <Compile Include="ASTERIX\CAT048\CAT48I050UserData.cs" />
+    <Compile Include="ASTERIX\CAT048\CAT48I065UserData.cs" />
+    <Compile Include="ASTERIX\CAT048\CAT48I060UserData.cs" />
+    <Compile Include="ASTERIX\CAT048\CAT48I130UserData.cs" />
+    <Compile Include="ASTERIX\CAT048\CAT48I260UserData.cs" />
+    <Compile Include="ASTERIX\CAT062\CAT62I060Types.cs" />
+    <Compile Include="ASTERIX\CAT062\CAT62I015Types.cs" />
+    <Compile Include="ASTERIX\CAT062\CAT62I015UserData.cs" />
+    <Compile Include="ASTERIX\CAT062\CAT62I070UserData.cs" />
+    <Compile Include="ASTERIX\CAT062\CAT62I105Types.cs" />
+    <Compile Include="ASTERIX\CAT062\CAT62I105UserData.cs" />
+    <Compile Include="ASTERIX\CAT062\CAT62I100UserData.cs" />
+    <Compile Include="ASTERIX\CAT062\CAT62I185UserData.cs" />
+    <Compile Include="ASTERIX\CAT062\CAT62I210UserData.cs" />
+    <Compile Include="ASTERIX\CAT062\CAT62I060UserData.cs" />
+    <Compile Include="ASTERIX\CAT062\CAT62I245UserData.cs" />
+    <Compile Include="ASTERIX\CAT062\CAT62I380UserData.cs" />
+    <Compile Include="ASTERIX\CAT062\CAT62I040UserData.cs" />
+    <Compile Include="ASTERIX\CAT062\CAT62I080UserData.cs" />
+    <Compile Include="ASTERIX\CAT062\CAT62I290UserData.cs" />
+    <Compile Include="ASTERIX\CAT062\CAT62I200UserData.cs" />
+    <Compile Include="ASTERIX\CAT062\CAT62I295UserData.cs" />
+    <Compile Include="ASTERIX\CAT062\CAT62I136UserData.cs" />
+    <Compile Include="ASTERIX\CAT062\CAT62I130UserData.cs" />
+    <Compile Include="ASTERIX\CAT062\CAT62I135UserData.cs" />
+    <Compile Include="ASTERIX\CAT062\CAT62I390Types.cs" />
+    <Compile Include="ASTERIX\CAT062\CAT62I390UserData.cs" />
+    <Compile Include="ASTERIX\CAT062\CAT62I220UserData.cs" />
+    <Compile Include="ASTERIX\CAT062\CAT62I270UserData.cs" />
+    <Compile Include="ASTERIX\CAT062\CAT62I300UserData.cs" />
+    <Compile Include="ASTERIX\CAT062\CAT62I110UserData.cs" />
+    <Compile Include="ASTERIX\CAT062\CAT62I120UserData.cs" />
+    <Compile Include="ASTERIX\CAT062\CAT62I510UserData.cs" />
+    <Compile Include="ASTERIX\CAT062\CAT62I5005UserData.cs" />
+    <Compile Include="ASTERIX\CAT062\CAT62I340UserData.cs" />
+    <Compile Include="ASTERIX\CAT062\CAT62I380Types.cs" />
+    <Compile Include="ASTERIX\CAT062\CAT62I295Types.cs" />
+    <Compile Include="ASTERIX\CAT062\CAT62I340Types.cs" />
+    <Compile Include="ASTERIX\CAT062\CAT62I220Types.cs" />
+    <Compile Include="ASTERIX\CAT062\CAT62I070Types.cs" />
+    <Compile Include="ASTERIX\CAT062\CAT62I185Types.cs" />
+    <Compile Include="ASTERIX\CAT062\CAT62IREFUserData.cs" />
+    <Compile Include="ASTERIX\CAT062\CAT62ISPIUserData.cs" />
+    <Compile Include="ASTERIX\CAT062\CAT62I290Types.cs" />
+    <Compile Include="DATA DISPLAY\DISPLAY UTILITIES\ExtendedLabel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DATA DISPLAY\DISPLAY UTILITIES\ExtendedLabel.Designer.cs">
+      <DependentUpon>ExtendedLabel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DATA DISPLAY\DYNAMIC DATA\UpdateHDG.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DATA DISPLAY\DYNAMIC DATA\UpdateHDG.Designer.cs">
+      <DependentUpon>UpdateHDG.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DATA DISPLAY\DYNAMIC DATA\UpdateSPD.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DATA DISPLAY\DYNAMIC DATA\UpdateSPD.Designer.cs">
+      <DependentUpon>UpdateSPD.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DATA DISPLAY\STATIC DATA\RunwayBorderDisplay.cs" />
+    <Compile Include="DATA SET\LoadRunwayBoundaries.cs" />
+    <Compile Include="MAIN\CAT_Decoder_Selector.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MAIN\CAT_Decoder_Selector.Designer.cs">
+      <DependentUpon>CAT_Decoder_Selector.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GOOGLE EARTH\Asterix_To_KML_Provider.cs" />
+    <Compile Include="MAIN\FrmAbout.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MAIN\FrmAbout.Designer.cs">
+      <DependentUpon>FrmAbout.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MAIN\frmDebug.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MAIN\frmDebug.Designer.cs">
+      <DependentUpon>frmDebug.cs</DependentUpon>
+    </Compile>
+    <Compile Include="REC_AND_FORWARD\AppendDateTime.cs" />
+    <Compile Include="GOOGLE EARTH\GoogleEarthProvider.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GOOGLE EARTH\GoogleEarthProvider.Designer.cs">
+      <DependentUpon>GoogleEarthProvider.cs</DependentUpon>
+    </Compile>
+    <Compile Include="REC_AND_FORWARD\RecForwConnection5.cs" />
+    <Compile Include="REC_AND_FORWARD\RecForwConnection3.cs" />
+    <Compile Include="REC_AND_FORWARD\RecForwConnection4.cs" />
+    <Compile Include="REC_AND_FORWARD\RecForwConnection2.cs" />
+    <Compile Include="REC_AND_FORWARD\FrmAstxRecFrwdForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="REC_AND_FORWARD\FrmAstxRecFrwdForm.Designer.cs">
+      <DependentUpon>FrmAstxRecFrwdForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DATA DISPLAY\DISPLAY UTILITIES\DisplayAttributesPicker.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DATA DISPLAY\DISPLAY UTILITIES\DisplayAttributesPicker.Designer.cs">
+      <DependentUpon>DisplayAttributesPicker.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DATA DISPLAY\DISPLAY UTILITIES\DisplayItemSelection.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DATA DISPLAY\DISPLAY UTILITIES\DisplayItemSelection.Designer.cs">
+      <DependentUpon>DisplayItemSelection.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DATA DISPLAY\DISPLAY UTILITIES\FileReadProgress.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DATA DISPLAY\DISPLAY UTILITIES\FileReadProgress.Designer.cs">
+      <DependentUpon>FileReadProgress.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DATA DISPLAY\DISPLAY UTILITIES\GraphicUtilities.cs" />
+    <Compile Include="DATA DISPLAY\DISPLAY UTILITIES\LabelAttributePicker.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DATA DISPLAY\DISPLAY UTILITIES\LabelAttributePicker.Designer.cs">
+      <DependentUpon>LabelAttributePicker.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DATA DISPLAY\DISPLAY UTILITIES\MisscelaneousSettings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DATA DISPLAY\DISPLAY UTILITIES\MisscelaneousSettings.Designer.cs">
+      <DependentUpon>MisscelaneousSettings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DATA DISPLAY\DYNAMIC DATA\UpdateCFL.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DATA DISPLAY\DYNAMIC DATA\UpdateCFL.Designer.cs">
+      <DependentUpon>UpdateCFL.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DATA DISPLAY\STATIC DATA\SectorBorderDisplay.cs" />
+    <Compile Include="DATA DISPLAY\STATIC DATA\StateBorderDisplay.cs" />
+    <Compile Include="DATA DISPLAY\STATIC DATA\WaypointDisplay.cs" />
+    <Compile Include="DATA DISPLAY\DISPLAY UTILITIES\CustomMarker.cs" />
+    <Compile Include="DATA DISPLAY\STATIC DATA\RadarDisplay.cs" />
+    <Compile Include="DATA SET\LabelAttributes.cs" />
+    <Compile Include="DATA SET\LoadSectorBoundaries.cs" />
+    <Compile Include="DATA SET\DisplayAttributes_IO.cs" />
+    <Compile Include="DATA SET\LoadStateBoundaries.cs" />
+    <Compile Include="DATA SET\DisplayAttributes.cs" />
+    <Compile Include="DATA SET\LoadWaypoints.cs" />
+    <Compile Include="DATA SET\LoadRadars.cs" />
+    <Compile Include="DATA SET\LoadAdaptationData.cs" />
+    <Compile Include="DATA SET\LoadCoreSettings.cs" />
+    <Compile Include="DATA DISPLAY\DISPLAY UTILITIES\DisplayRightClickOptions.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DATA DISPLAY\DISPLAY UTILITIES\DisplayRightClickOptions.Designer.cs">
+      <DependentUpon>DisplayRightClickOptions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GOOGLE EARTH\EarthPlotExporter.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GOOGLE EARTH\EarthPlotExporter.Designer.cs">
+      <DependentUpon>EarthPlotExporter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DATA DISPLAY\DYNAMIC DATA\DynamicDisplayBuilder.cs" />
+    <Compile Include="MIKE GAVANGHAN - GEODETIC\Angle.cs" />
+    <Compile Include="ASTERIX\Bit_Ops.cs" />
+    <Compile Include="ASTERIX\CAT001\CAT01DecodeAndStore.cs" />
+    <Compile Include="ASTERIX\CAT001\CAT01I020Types.cs" />
+    <Compile Include="ASTERIX\CAT001\CAT01I020UserData.cs" />
+    <Compile Include="ASTERIX\CAT001\CAT01I040Types.cs" />
+    <Compile Include="ASTERIX\CAT001\CAT01I040UserData.cs" />
+    <Compile Include="ASTERIX\CAT001\CAT01I042Types.cs" />
+    <Compile Include="ASTERIX\CAT001\CAT01I042UserData.cs" />
+    <Compile Include="ASTERIX\CAT001\CAT01I070Types.cs" />
+    <Compile Include="ASTERIX\CAT001\CAT01I070UserData.cs" />
+    <Compile Include="ASTERIX\CAT001\CAT01I090Types.cs" />
+    <Compile Include="ASTERIX\CAT001\CAT01I090UserData.cs" />
+    <Compile Include="ASTERIX\CAT001\CAT01I161Types.cs" />
+    <Compile Include="ASTERIX\CAT001\CAT01I161UserData.cs" />
+    <Compile Include="ASTERIX\CAT001\CAT01I200Types.cs" />
+    <Compile Include="ASTERIX\CAT001\CAT01I200UserData.cs" />
+    <Compile Include="ASTERIX\CAT002\CAT02DecodeAndStore.cs" />
+    <Compile Include="ASTERIX\CAT008\CAT08DecodeAndStore.cs" />
+    <Compile Include="ASTERIX\CAT008\CAT08.cs" />
+    <Compile Include="ASTERIX\ASTERIX.cs" />
+    <Compile Include="ASTERIX\CAT001\CAT01.cs" />
+    <Compile Include="ASTERIX\CAT002\CAT02.cs" />
+    <Compile Include="ASTERIX\CAT034\CAT34DecodeAndStore.cs" />
+    <Compile Include="ASTERIX\CAT048\CAT48DecodeAndStore.cs" />
+    <Compile Include="ASTERIX\CAT048\CAT48I020UserData.cs" />
+    <Compile Include="ASTERIX\CAT048\CAT48I020Types.cs" />
+    <Compile Include="ASTERIX\CAT048\CAT48I040Types.cs" />
+    <Compile Include="ASTERIX\CAT048\CAT48I040UserData.cs" />
+    <Compile Include="ASTERIX\CAT048\CAT48I070Types.cs" />
+    <Compile Include="ASTERIX\CAT048\CAT48I070UserData.cs" />
+    <Compile Include="ASTERIX\CAT048\CAT48I090Types.cs" />
+    <Compile Include="ASTERIX\CAT048\CAT48I090UserData.cs" />
+    <Compile Include="ASTERIX\CAT048\CAT48I140Types.cs" />
+    <Compile Include="ASTERIX\CAT048\CAT48I140UserData.cs" />
+    <Compile Include="ASTERIX\CAT062\CAT62DecodeAndStore.cs" />
+    <Compile Include="ASTERIX\CAT063\CAT63DecodeAndStore.cs" />
+    <Compile Include="ASTERIX\CAT065\CAT65DecodeAndStore.cs" />
+    <Compile Include="ASTERIX\CAT244\CAT244DecodeAndStore.cs" />
+    <Compile Include="ASTERIX\CAT244\CAT244.cs" />
+    <Compile Include="ASTERIX\CAT034\CAT34.cs" />
+    <Compile Include="ASTERIX\CAT048\CAT48.cs" />
+    <Compile Include="ASTERIX\CAT062\CAT62.cs" />
+    <Compile Include="ASTERIX\CAT063\CAT63.cs" />
+    <Compile Include="ASTERIX\CAT065\CAT65.cs" />
+    <Compile Include="MIKE GAVANGHAN - GEODETIC\Ellipsoid.cs" />
+    <Compile Include="MAIN\GeoCordSystem.cs" />
+    <Compile Include="MIKE GAVANGHAN - GEODETIC\GeodeticCalculator.cs" />
+    <Compile Include="MIKE GAVANGHAN - GEODETIC\GeodeticCurve.cs" />
+    <Compile Include="MIKE GAVANGHAN - GEODETIC\GeodeticMeasurement.cs" />
+    <Compile Include="MIKE GAVANGHAN - GEODETIC\GlobalCoordinates.cs" />
+    <Compile Include="MIKE GAVANGHAN - GEODETIC\GlobalPosition.cs" />
+    <Compile Include="DATA SET\SystemAdaptationDataSet.cs" />
+    <Compile Include="MAIN\BitExtractor.cs" />
+    <Compile Include="MAIN\FrmDataItemPresence.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MAIN\FrmDataItemPresence.Designer.cs">
+      <DependentUpon>FrmDataItemPresence.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MAIN\FrmDetailedView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MAIN\FrmDetailedView.Designer.cs">
+      <DependentUpon>FrmDetailedView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MAIN\FrmMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MAIN\FrmMain.Designer.cs">
+      <DependentUpon>FrmMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MAIN\MainASTERIXDataStorage.cs" />
+    <Compile Include="MAIN\Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="DATA DISPLAY\STATIC DATA\StaticDisplayBuilder.cs" />
+    <Compile Include="REC_AND_FORWARD\RecForwConnection1.cs" />
+    <Compile Include="REPLAY\AsterixReplay.cs" />
+    <Compile Include="REPLAY\FrmReplayForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="REPLAY\FrmReplayForm.Designer.cs">
+      <DependentUpon>FrmReplayForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MAIN\Settings.cs" />
+    <Compile Include="MAIN\ViewDataBySSRCode.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MAIN\ViewDataBySSRCode.Designer.cs">
+      <DependentUpon>ViewDataBySSRCode.cs</DependentUpon>
+    </Compile>
+    <Compile Include="REPLAY\FrmReplayToRaw.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="REPLAY\FrmReplayToRaw.Designer.cs">
+      <DependentUpon>FrmReplayToRaw.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SAFETY NET\SEP Tool.cs" />
+    <Compile Include="SAFETY NET\STCA.cs" />
+    <Compile Include="WBTD\WBTD.cs" />
+    <EmbeddedResource Include="DATA DISPLAY\DISPLAY UTILITIES\ExtendedLabel.resx">
+      <DependentUpon>ExtendedLabel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DATA DISPLAY\DYNAMIC DATA\UpdateHDG.resx">
+      <DependentUpon>UpdateHDG.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DATA DISPLAY\DYNAMIC DATA\UpdateSPD.resx">
+      <DependentUpon>UpdateSPD.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MAIN\CAT_Decoder_Selector.resx">
+      <DependentUpon>CAT_Decoder_Selector.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MAIN\FrmAbout.resx">
+      <DependentUpon>FrmAbout.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MAIN\frmDebug.resx">
+      <DependentUpon>frmDebug.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="REC_AND_FORWARD\FrmAstxRecFrwdForm.resx">
+      <DependentUpon>FrmAstxRecFrwdForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DATA DISPLAY\DISPLAY UTILITIES\DisplayAttributesPicker.resx">
+      <DependentUpon>DisplayAttributesPicker.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DATA DISPLAY\DISPLAY UTILITIES\DisplayItemSelection.resx">
+      <DependentUpon>DisplayItemSelection.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DATA DISPLAY\DISPLAY UTILITIES\DisplayRightClickOptions.resx">
+      <DependentUpon>DisplayRightClickOptions.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DATA DISPLAY\DISPLAY UTILITIES\FileReadProgress.resx">
+      <DependentUpon>FileReadProgress.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DATA DISPLAY\DISPLAY UTILITIES\LabelAttributePicker.resx">
+      <DependentUpon>LabelAttributePicker.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DATA DISPLAY\DISPLAY UTILITIES\MisscelaneousSettings.resx">
+      <DependentUpon>MisscelaneousSettings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DATA DISPLAY\DYNAMIC DATA\UpdateCFL.resx">
+      <DependentUpon>UpdateCFL.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GOOGLE EARTH\EarthPlotExporter.resx">
+      <DependentUpon>EarthPlotExporter.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MAIN\FrmDataItemPresence.resx">
+      <DependentUpon>FrmDataItemPresence.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MAIN\FrmDetailedView.resx">
+      <DependentUpon>FrmDetailedView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MAIN\FrmMain.resx">
+      <DependentUpon>FrmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MAIN\FrmConnectionSettings.resx">
+      <DependentUpon>FrmConnectionSettings.cs</DependentUpon>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="GOOGLE EARTH\GoogleEarthProvider.resx">
+      <DependentUpon>GoogleEarthProvider.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="REPLAY\FrmReplayForm.resx">
+      <DependentUpon>FrmReplayForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MAIN\ViewDataBySSRCode.resx">
+      <DependentUpon>ViewDataBySSRCode.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="REPLAY\FrmReplayToRaw.resx">
+      <DependentUpon>FrmReplayToRaw.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="app.config" />
+    <None Include="DATA SAMPLES\ARTAS.rply" />
+    <None Include="DATA SAMPLES\Jahorina.raw" />
+    <None Include="DATA SAMPLES\Jahorina.rply" />
+    <None Include="MAIN\app.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="MAIN\FrmConnectionSettings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MAIN\FrmConnectionSettings.Designer.cs">
+      <DependentUpon>FrmConnectionSettings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MAIN\SharedData.cs" />
+    <None Include="DOCUMENTATION\User Manual.docx" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.0">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="DARR.ico" />
+    <Content Include="DOCUMENTATION\Release Notes.txt" />
+    <Content Include="DOCUMENTATION\To_Do.txt" />
+    <Content Include="Resources\DARR.ico" />
+    <Content Include="Resources\radar.jpg" />
+    <Content Include="MAIN\README.txt" />
+    <None Include="Resources\waypoint.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <PublishFile Include="Microsoft.VisualBasic.PowerPacks.Vs">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

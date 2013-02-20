@@ -307,7 +307,7 @@ namespace AsterixDisplayAnalyser
             gMapControl.MinZoom = 0;
             gMapControl.MaxZoom = 30;
             // Default ZOOM
-            gMapControl.Zoom = 8;
+            gMapControl.Zoom = 7;
             this.lblZoomLevel.Text = gMapControl.Zoom.ToString();
 
             // Add overlays

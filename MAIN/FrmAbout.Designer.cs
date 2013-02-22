@@ -98,7 +98,7 @@
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "FrmAbout";
-            this.Text = "About ASTERIX DARR";
+            this.Text = "About CBT Real Time";
             this.Load += new System.EventHandler(this.FrmAbout_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

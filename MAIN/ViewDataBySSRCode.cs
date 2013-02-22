@@ -143,7 +143,7 @@ namespace AsterixDisplayAnalyser
                             // Display Data
                             CAT48I240Types.CAT48I240ACID_Data ACID_String = (CAT48I240Types.CAT48I240ACID_Data)Msg.CAT48DataItems[CAT48.ItemIDToIndex("240")].value;
                             if (ACID_String != null)
-                            this.listBoxDataBySSRCode.Items.Add("\t" + "Callsign:" + ACID_String.ACID);
+                                this.listBoxDataBySSRCode.Items.Add("\t" + "Callsign:" + ACID_String.ACID);
                             else
                                 this.listBoxDataBySSRCode.Items.Add("\t" + "Callsign: N/A");
 

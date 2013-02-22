@@ -11,8 +11,8 @@ namespace AsterixDisplayAnalyser
         /////////////////////////////////////////////////////////////////
         /// Define lat/long fix point values from LSB to MSB
         /////////////////////////////////////////////////////////////////
-        
-       // private const double POS_FIX_1 = 180.0 / Math.Pow(2.0, 25.0);
+
+        // private const double POS_FIX_1 = 180.0 / Math.Pow(2.0, 25.0);
 
         private const double POS_FIX_1 = 180.0 / 33554432.0;
         private const double POS_FIX_2 = POS_FIX_1 * 2.0;
@@ -48,7 +48,7 @@ namespace AsterixDisplayAnalyser
         private const double POS_FIX_29 = POS_FIX_28 * 2.0;
         private const double POS_FIX_30 = POS_FIX_29 * 2.0;
         private const double POS_FIX_31 = POS_FIX_30 * 2.0;
-        
+
         public static void DecodeCAT62I105(byte[] Data)
         {
 
@@ -63,7 +63,7 @@ namespace AsterixDisplayAnalyser
             double Result = 0.0;
             double Latitude = 0.0;
             double Longitude = 0.0;
-            
+
             // Check for negative values
             if (BO.DWord[Bit_Ops.Bit31] == true)
             {
@@ -231,7 +231,7 @@ namespace AsterixDisplayAnalyser
             BO.DWord[Bit_Ops.Bits16_23_Of_DWord] = Data[CAT62.CurrentDataBufferOctalIndex + 5];
             BO.DWord[Bit_Ops.Bits24_31_Of_DWord] = Data[CAT62.CurrentDataBufferOctalIndex + 4];
 
-             // Check for negative values
+            // Check for negative values
             if (BO.DWord[Bit_Ops.Bit31] == true)
             {
                 BO.DWord[Bit_Ops.Bit0] = !BO.DWord[Bit_Ops.Bit0];

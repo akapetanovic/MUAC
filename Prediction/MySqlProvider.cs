@@ -50,21 +50,6 @@ namespace AsterixDisplayAnalyser
             return ConnectionOK;
         }
 
-
-        // All data only latest tracks
-        //            string sql = @" 
-        //                            SELECT
-        //                                acid,
-        //                                max(time),
-        //                                lat,
-        //                                lon,
-        //                                fl,
-        //                                acc
-        //                            FROM " + PredictionTable +
-        //                " WHERE 1 GROUP by acid ORDER by time DESC";
-
-
-
         // This method returns table string to be used in SQL string
         private string GetTableString(PredictionTableNumberType TableNumber)
         {
@@ -199,6 +184,61 @@ namespace AsterixDisplayAnalyser
 
             string Date_And_Time = MySqlDateTimeUtility.BuildMySqlDateTimeString(TimeToAdd);
             
+            //  Get the data for ceratin time range
+            // Get the data for ceratin time range
+            string sql = @" 
+                            SELECT
+                                acid,
+                                time,
+                                lat,
+                                lon,
+                                fl,
+                                acc
+                            FROM " + GetTableString(TableNumber) +
+                " WHERE time BETWEEN " + Date_And_Time + " AND " + Date_And_Time + " GROUP by acid ORDER by time DESC";
+
+            MySqlConnection conn = new MySqlConnection(connString);
+
+            try
+            {
+                conn.Open();
+                MySqlCommand cmd = new MySqlCommand(sql, conn);
+                MySqlDataReader rdr = cmd.ExecuteReader();
+
+                while (rdr.Read())
+                {
+                    PredictionDataSetOneRow OneRow = new PredictionDataSetOneRow();
+                    if (rdr.GetString(0).Length > 0)
+                    {
+                        OneRow.ACID = rdr.GetString(0);
+                        OneRow.Time = rdr.GetDateTime(1);
+                        OneRow.Lat = rdr.GetString(2);
+                        OneRow.Lon = rdr.GetString(3);
+                        OneRow.FL = rdr.GetString(4);
+                        OneRow.Accuracy = rdr.GetString(5);
+                        DataRetreived.Add(OneRow);
+                    }
+                }
+                rdr.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+
+            conn.Close();
+
+            return DataRetreived;
+        }
+
+        ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        // This method returns one record of data for specifed Time and ACID
+        public System.Collections.Generic.List<PredictionDataSetOneRow> GetAllDataForTimeAndACID(PredictionTableNumberType TableNumber, TimeSpan TimeToAdd, string ACID)
+        {
+            System.Collections.Generic.List<PredictionDataSetOneRow> DataRetreived = new System.Collections.Generic.List<PredictionDataSetOneRow>();
+
+            string Date_And_Time = MySqlDateTimeUtility.BuildMySqlDateTimeString(TimeToAdd);
+
             //  Get the data for ceratin time range
             // Get the data for ceratin time range
             string sql = @" 

@@ -297,6 +297,7 @@
     </Compile>
     <Compile Include="Prediction\MySqlDateTimeUtility.cs" />
     <Compile Include="Prediction\MySqlProvider.cs" />
+    <Compile Include="Prediction\PredictionBuilder.cs" />
     <Compile Include="Prediction\PredictionControl.cs">
       <SubType>Form</SubType>
     </Compile>

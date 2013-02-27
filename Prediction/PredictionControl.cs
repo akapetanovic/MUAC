@@ -22,6 +22,10 @@ namespace AsterixDisplayAnalyser
             this.comboBoxCriteria.SelectedIndex = 0;
             // Initialise Prediction Time Lookahead to the currently selected value
             this.trackBarPrediction.Value = SharedData.LookAheadTime.Minutes + (SharedData.LookAheadTime.Hours * 60);
+
+            this.checkBox1Active.Checked = SharedData.Prediction1_Enabled;
+            this.checkBox2Active.Checked = SharedData.Prediction2_Enabled;
+            this.checkBox3Active.Checked = SharedData.Prediction3_Enabled;
         }
 
         private void SyncConnectionData()

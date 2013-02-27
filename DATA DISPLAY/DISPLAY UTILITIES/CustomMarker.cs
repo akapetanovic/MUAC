@@ -564,4 +564,32 @@ namespace AsterixDisplayAnalyser
             }
         }
     }
+
+    public class PredictionMarker : GMap.NET.WindowsForms.GMapMarker
+    {
+        private Color PredictionColor;
+        PointLatLng EndPosition;
+        /// <summary>
+        /// Constructor
+        /// </summary>
+        /// <param name="p">The position of the marker</param>
+        public PredictionMarker(PointLatLng p, Color PredictionColor_In, PointLatLng End_Position)
+            : base(p)
+        {
+
+            PredictionColor = PredictionColor_In;
+            EndPosition = End_Position;
+        }
+
+        public override void OnRender(Graphics g)
+        {
+            Pen MyPen = new Pen(new SolidBrush(PredictionColor), LabelAttributes.TargetSize);
+            MyPen.DashStyle = LabelAttributes.TargetStyle;
+            GPoint G_Local_POsition = FormMain.FromLatLngToLocal(EndPosition);
+            // Draw AC Symbol
+            g.DrawRectangle(MyPen, G_Local_POsition.X - 5, G_Local_POsition.Y - 5, 10, 10);
+            g.DrawLine(MyPen, LocalPosition, new Point(G_Local_POsition.X, G_Local_POsition.Y));
+
+        }
+    }
 }

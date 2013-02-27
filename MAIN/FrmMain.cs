@@ -27,7 +27,7 @@ namespace AsterixDisplayAnalyser
         //Debug MyDebug = new Debug();
 
         ////////////////////////
-       
+
 
 
         // Static Map Overlay
@@ -36,6 +36,8 @@ namespace AsterixDisplayAnalyser
         GMapOverlay DinamicOverlay;
         // Tools Map Overlay
         GMapOverlay ToolsOverlay;
+        // Prediction Overlay
+        GMapOverlay PredictionOverlay;
 
         // Keep track of the last selected SSR code index
         int SSR_Filter_Last_Index = 0;
@@ -317,6 +319,8 @@ namespace AsterixDisplayAnalyser
             gMapControl.Overlays.Add(DinamicOverlay);
             ToolsOverlay = new GMapOverlay(gMapControl, "OverlayThree");
             gMapControl.Overlays.Add(ToolsOverlay);
+            PredictionOverlay = new GMapOverlay(gMapControl, "PredictionOverlay");
+            gMapControl.Overlays.Add(PredictionOverlay);
 
             this.labelDisplayUpdateRate.Text = "Update rate: " + this.PlotandTrackDisplayUpdateTimer.Interval.ToString() + "ms";
             this.comboBoxMapType.Text = "Plain";
@@ -717,15 +721,16 @@ namespace AsterixDisplayAnalyser
 
                 // First clear all the data from the previous cycle.
                 if (DinamicOverlay.Markers.Count > 0)
-                {
                     DinamicOverlay.Markers.Clear();
-                }
+
+                if (PredictionOverlay.Markers.Count > 0)
+                    PredictionOverlay.Markers.Clear();
 
                 // Now get the data since the last cycle and display it on the map
                 DynamicDisplayBuilder DP = new DynamicDisplayBuilder();
                 System.Collections.Generic.List<DynamicDisplayBuilder.TargetType> TargetList = new System.Collections.Generic.List<DynamicDisplayBuilder.TargetType>();
 
-                // Here hanlde display od live data
+                // Here handle display od live data
                 if (SharedData.bool_Listen_for_Data == true)
                 {
                     DynamicDisplayBuilder.GetDisplayData(false, out TargetList);
@@ -742,7 +747,8 @@ namespace AsterixDisplayAnalyser
                     bool Provide_To_Google_Earth = comboBoxLiveDisplayMode.Text != "Local";
                     bool ProvideWebData = comboBoxLiveDisplayMode.Text == "Local & Web" || comboBoxLiveDisplayMode.Text == "Web";
                     Asterix_To_KML_Provider ASTX_TO_KML = new Asterix_To_KML_Provider();
-                  WBTD WebBasedDisplayProvider = new WBTD();
+                    WBTD WebBasedDisplayProvider = new WBTD();
+                    PredictionBuilder Prediction_B = new PredictionBuilder();
 
                     foreach (DynamicDisplayBuilder.TargetType Target in TargetList)
                     {
@@ -759,14 +765,26 @@ namespace AsterixDisplayAnalyser
                                     SetLabelAttributes(ref Target.MyMarker);
 
                                     if (Build_Local_Display)
+                                    {
                                         DinamicOverlay.Markers.Add(Target.MyMarker);
+
+                                        if (SharedData.Prediction1_Enabled)
+                                            Prediction_B.Build_Prediction_Marker(Target.MyMarker.Position, Target.MyMarker.CALLSIGN_STRING, MySqlProvider.PredictionTableNumberType.One, ref PredictionOverlay);
+
+                                        if (SharedData.Prediction2_Enabled)
+                                            Prediction_B.Build_Prediction_Marker(Target.MyMarker.Position, Target.MyMarker.CALLSIGN_STRING, MySqlProvider.PredictionTableNumberType.Two, ref PredictionOverlay);
+
+                                        if (SharedData.Prediction3_Enabled)
+                                            Prediction_B.Build_Prediction_Marker(Target.MyMarker.Position, Target.MyMarker.CALLSIGN_STRING, MySqlProvider.PredictionTableNumberType.Three, ref PredictionOverlay);
+
+                                    }
 
                                     if (Provide_To_Google_Earth)
                                         ASTX_TO_KML.AddNewTarget(Target);
 
-                                if (ProvideWebData)
-                                       WebBasedDisplayProvider.SetTargetData(Target.Lat.ToString(), Target.Lon.ToString(), Target.ACID_Mode_S,
-                                           Target.ModeA, Target.ModeC);
+                                    if (ProvideWebData)
+                                        WebBasedDisplayProvider.SetTargetData(Target.Lat.ToString(), Target.Lon.ToString(), Target.ACID_Mode_S,
+                                            Target.ModeA, Target.ModeC);
                                 }
                             }
                             else // No SSR filter so just display all of them
@@ -777,14 +795,25 @@ namespace AsterixDisplayAnalyser
                                 SetLabelAttributes(ref Target.MyMarker);
 
                                 if (Build_Local_Display)
+                                {
                                     DinamicOverlay.Markers.Add(Target.MyMarker);
+
+                                    if (SharedData.Prediction1_Enabled)
+                                        Prediction_B.Build_Prediction_Marker(Target.MyMarker.Position, Target.MyMarker.CALLSIGN_STRING, MySqlProvider.PredictionTableNumberType.One, ref PredictionOverlay);
+
+                                    if (SharedData.Prediction2_Enabled)
+                                        Prediction_B.Build_Prediction_Marker(Target.MyMarker.Position, Target.MyMarker.CALLSIGN_STRING, MySqlProvider.PredictionTableNumberType.Two, ref PredictionOverlay);
+
+                                    if (SharedData.Prediction3_Enabled)
+                                        Prediction_B.Build_Prediction_Marker(Target.MyMarker.Position, Target.MyMarker.CALLSIGN_STRING, MySqlProvider.PredictionTableNumberType.Three, ref PredictionOverlay);
+                                }
 
                                 if (Provide_To_Google_Earth)
                                     ASTX_TO_KML.AddNewTarget(Target);
 
                                 if (ProvideWebData)
-                                   WebBasedDisplayProvider.SetTargetData(Target.Lat.ToString(), Target.Lon.ToString(), Target.ACID_Mode_S,
-                                      Target.ModeA, Target.ModeC);
+                                    WebBasedDisplayProvider.SetTargetData(Target.Lat.ToString(), Target.Lon.ToString(), Target.ACID_Mode_S,
+                                       Target.ModeA, Target.ModeC);
                             }
                         }
                     }
@@ -797,8 +826,8 @@ namespace AsterixDisplayAnalyser
                         ASTX_TO_KML.BuildKML();
 
                     if (ProvideWebData)
-                       WebBasedDisplayProvider.WriteTrackData();
-                        
+                        WebBasedDisplayProvider.WriteTrackData();
+
                 }
                 else // Here handle display of passive display (buffered data)
                 {
@@ -1396,8 +1425,10 @@ namespace AsterixDisplayAnalyser
                                 }
                                 else
                                 {
+
                                     GMapTargetandLabel MyMarker = (GMapTargetandLabel)m;
                                     MyMarker.ShowLabelBox = false;
+
                                 }
 
                             }
@@ -1646,9 +1677,11 @@ namespace AsterixDisplayAnalyser
 
         bool MouseIsOnTheLabel(MouseEventArgs Mouse, GMapMarker Marker)
         {
+
             GMapTargetandLabel MyMarker = (GMapTargetandLabel)Marker;
             Rectangle MyRectangle = new Rectangle(MyMarker.GetLabelStartingPoint().X, MyMarker.GetLabelStartingPoint().Y, MyMarker.GetLabelWidth(), MyMarker.GetLabelHeight());
             return MyRectangle.Contains(new Point(Mouse.X, Mouse.Y));
+
         }
 
         bool MouseIsOnTheCFL(MouseEventArgs Mouse, GMapMarker Marker)
@@ -2728,11 +2761,13 @@ namespace AsterixDisplayAnalyser
         private void gMapControl_OnMapZoomChanged()
         {
             this.lblZoomLevel.Text = gMapControl.Zoom.ToString();
+          
         }
 
         private void gMapControl_OnMapDrag()
         {
             UpdatelblCenter();
+           
         }
 
         // Handle custom key presses

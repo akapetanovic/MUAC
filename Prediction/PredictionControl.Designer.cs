@@ -41,6 +41,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
             this.numericUpDownMin = new System.Windows.Forms.NumericUpDown();
             this.numericUpDownHrs = new System.Windows.Forms.NumericUpDown();
             this.label7 = new System.Windows.Forms.Label();
@@ -59,8 +61,6 @@
             this.Time = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.FL = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ACUR = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
             this.trackBarPrediction = new System.Windows.Forms.TrackBar();
             this.labelPredictionTimeReadout = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
@@ -87,7 +87,7 @@
             // checkBox3Active
             // 
             this.checkBox3Active.AutoSize = true;
-            this.checkBox3Active.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.checkBox3Active.BackColor = System.Drawing.Color.Orange;
             this.checkBox3Active.Location = new System.Drawing.Point(6, 70);
             this.checkBox3Active.Name = "checkBox3Active";
             this.checkBox3Active.Size = new System.Drawing.Size(65, 17);
@@ -99,7 +99,7 @@
             // checkBox1Active
             // 
             this.checkBox1Active.AutoSize = true;
-            this.checkBox1Active.BackColor = System.Drawing.Color.Yellow;
+            this.checkBox1Active.BackColor = System.Drawing.Color.Magenta;
             this.checkBox1Active.Location = new System.Drawing.Point(6, 24);
             this.checkBox1Active.Name = "checkBox1Active";
             this.checkBox1Active.Size = new System.Drawing.Size(65, 17);
@@ -220,6 +220,24 @@
             this.groupBox3.TabIndex = 4;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Data Lookup Settings";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(187, 92);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(23, 13);
+            this.label8.TabIndex = 13;
+            this.label8.Text = "min";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(142, 92);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(13, 13);
+            this.label9.TabIndex = 12;
+            this.label9.Text = "h";
             // 
             // numericUpDownMin
             // 
@@ -407,24 +425,6 @@
             this.ACUR.Name = "ACUR";
             this.ACUR.ReadOnly = true;
             this.ACUR.Width = 30;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(142, 92);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(13, 13);
-            this.label9.TabIndex = 12;
-            this.label9.Text = "h";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(187, 92);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(23, 13);
-            this.label8.TabIndex = 13;
-            this.label8.Text = "min";
             // 
             // trackBarPrediction
             // 

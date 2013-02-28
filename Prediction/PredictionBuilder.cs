@@ -74,18 +74,20 @@ namespace AsterixDisplayAnalyser
                 PointLatLng PredictedPoint = new PointLatLng(P_Pont.GetLatLongDecimal().LatitudeDecimal, P_Pont.GetLatLongDecimal().LongitudeDecimal);
                 PredictionMarker PM;
 
+                string label = Record[0].ACID + "\n" + Record[0].Time.ToShortTimeString();
+
                 switch (Table_Type)
                 {
                     case MySqlProvider.PredictionTableNumberType.One:
-                        PM = new PredictionMarker(Base_Position, Color.Magenta, PredictedPoint);
+                        PM = new PredictionMarker(Base_Position, Color.Magenta, PredictedPoint, label);
                         Overlay.Markers.Add(PM);
                         break;
                     case MySqlProvider.PredictionTableNumberType.Two:
-                        PM = new PredictionMarker(Base_Position, Color.Blue, PredictedPoint);
+                        PM = new PredictionMarker(Base_Position, Color.Blue, PredictedPoint, label);
                         Overlay.Markers.Add(PM);
                         break;
                     case MySqlProvider.PredictionTableNumberType.Three:
-                        PM = new PredictionMarker(Base_Position, Color.Orange, PredictedPoint);
+                        PM = new PredictionMarker(Base_Position, Color.Orange, PredictedPoint, label);
                         Overlay.Markers.Add(PM);
                         break;
                 }

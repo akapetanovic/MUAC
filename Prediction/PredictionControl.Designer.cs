@@ -64,6 +64,7 @@
             this.trackBarPrediction = new System.Windows.Forms.TrackBar();
             this.labelPredictionTimeReadout = new System.Windows.Forms.Label();
             this.checkBoxTestMode = new System.Windows.Forms.CheckBox();
+            this.groupBoxSimMode = new System.Windows.Forms.GroupBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -71,6 +72,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownHrs)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBarPrediction)).BeginInit();
+            this.groupBoxSimMode.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -363,7 +365,7 @@
             // 
             this.button2.Location = new System.Drawing.Point(10, 585);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(347, 21);
+            this.button2.Size = new System.Drawing.Size(427, 21);
             this.button2.TabIndex = 3;
             this.button2.Text = "Get Data";
             this.button2.UseVisualStyleBackColor = true;
@@ -380,10 +382,10 @@
             this.Time,
             this.FL,
             this.ACUR});
-            this.dataGridViewDataSet.Location = new System.Drawing.Point(10, 178);
+            this.dataGridViewDataSet.Location = new System.Drawing.Point(10, 220);
             this.dataGridViewDataSet.Name = "dataGridViewDataSet";
             this.dataGridViewDataSet.ReadOnly = true;
-            this.dataGridViewDataSet.Size = new System.Drawing.Size(427, 401);
+            this.dataGridViewDataSet.Size = new System.Drawing.Size(427, 359);
             this.dataGridViewDataSet.TabIndex = 5;
             // 
             // ACID
@@ -433,6 +435,7 @@
             this.trackBarPrediction.LargeChange = 60;
             this.trackBarPrediction.Location = new System.Drawing.Point(12, 127);
             this.trackBarPrediction.Maximum = 600;
+            this.trackBarPrediction.Minimum = 1;
             this.trackBarPrediction.Name = "trackBarPrediction";
             this.trackBarPrediction.Size = new System.Drawing.Size(425, 45);
             this.trackBarPrediction.TabIndex = 6;
@@ -447,26 +450,36 @@
             this.labelPredictionTimeReadout.Name = "labelPredictionTimeReadout";
             this.labelPredictionTimeReadout.Size = new System.Drawing.Size(68, 13);
             this.labelPredictionTimeReadout.TabIndex = 7;
-            this.labelPredictionTimeReadout.Text = "00 h : 00 min";
+            this.labelPredictionTimeReadout.Text = "00 h : 01 min";
             // 
             // checkBoxTestMode
             // 
             this.checkBoxTestMode.AutoSize = true;
             this.checkBoxTestMode.Checked = true;
             this.checkBoxTestMode.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBoxTestMode.Location = new System.Drawing.Point(363, 588);
+            this.checkBoxTestMode.Location = new System.Drawing.Point(6, 17);
             this.checkBoxTestMode.Name = "checkBoxTestMode";
-            this.checkBoxTestMode.Size = new System.Drawing.Size(77, 17);
+            this.checkBoxTestMode.Size = new System.Drawing.Size(73, 17);
             this.checkBoxTestMode.TabIndex = 8;
-            this.checkBoxTestMode.Text = "Test Mode";
+            this.checkBoxTestMode.Text = "Sim Mode";
             this.checkBoxTestMode.UseVisualStyleBackColor = true;
+            // 
+            // groupBoxSimMode
+            // 
+            this.groupBoxSimMode.Controls.Add(this.checkBoxTestMode);
+            this.groupBoxSimMode.Location = new System.Drawing.Point(18, 174);
+            this.groupBoxSimMode.Name = "groupBoxSimMode";
+            this.groupBoxSimMode.Size = new System.Drawing.Size(410, 40);
+            this.groupBoxSimMode.TabIndex = 9;
+            this.groupBoxSimMode.TabStop = false;
+            this.groupBoxSimMode.Text = "Simulation";
             // 
             // PredictionControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(440, 608);
-            this.Controls.Add(this.checkBoxTestMode);
+            this.Controls.Add(this.groupBoxSimMode);
             this.Controls.Add(this.labelPredictionTimeReadout);
             this.Controls.Add(this.trackBarPrediction);
             this.Controls.Add(this.dataGridViewDataSet);
@@ -489,6 +502,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownHrs)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBarPrediction)).EndInit();
+            this.groupBoxSimMode.ResumeLayout(false);
+            this.groupBoxSimMode.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -532,6 +547,7 @@
         private System.Windows.Forms.TrackBar trackBarPrediction;
         private System.Windows.Forms.Label labelPredictionTimeReadout;
         private System.Windows.Forms.CheckBox checkBoxTestMode;
+        private System.Windows.Forms.GroupBox groupBoxSimMode;
 
 
 

@@ -567,18 +567,23 @@ namespace AsterixDisplayAnalyser
 
     public class PredictionMarker : GMap.NET.WindowsForms.GMapMarker
     {
+        public static FontFamily Font_Fammily = FontFamily.GenericSansSerif;
+        public Font Label_Font = new Font(Font_Fammily, 10, FontStyle.Regular, GraphicsUnit.Pixel);
+        
         private Color PredictionColor;
         PointLatLng EndPosition;
+        string LABEL;
         /// <summary>
         /// Constructor
         /// </summary>
         /// <param name="p">The position of the marker</param>
-        public PredictionMarker(PointLatLng p, Color PredictionColor_In, PointLatLng End_Position)
+        public PredictionMarker(PointLatLng p, Color PredictionColor_In, PointLatLng End_Position, string Label)
             : base(p)
         {
 
             PredictionColor = PredictionColor_In;
             EndPosition = End_Position;
+            LABEL = Label;
         }
 
         public override void OnRender(Graphics g)
@@ -586,6 +591,9 @@ namespace AsterixDisplayAnalyser
             Pen MyPen = new Pen(new SolidBrush(PredictionColor), LabelAttributes.TargetSize);
             MyPen.DashStyle = LabelAttributes.TargetStyle;
             GPoint G_Local_POsition = FormMain.FromLatLngToLocal(EndPosition);
+
+            g.DrawString(LABEL, Label_Font, new SolidBrush(PredictionColor), G_Local_POsition.X - 30, G_Local_POsition.Y - 30);
+
             // Draw AC Symbol
             g.DrawRectangle(MyPen, G_Local_POsition.X - 5, G_Local_POsition.Y - 5, 10, 10);
             g.DrawLine(MyPen, LocalPosition, new Point(G_Local_POsition.X, G_Local_POsition.Y));

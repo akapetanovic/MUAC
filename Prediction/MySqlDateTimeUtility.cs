@@ -7,13 +7,11 @@ namespace AsterixDisplayAnalyser
 {
     class MySqlDateTimeUtility
     {
-        public static bool Is_Test_Mode = true;
-
         //DateTimeOut = "'2013-1-29 10:14:00'";
         public static string BuildMySqlDateTimeString(TimeSpan TimeToAdd, bool Is_DBM_Lookup, MySqlProvider.PredictionTableNumberType Table)
         {
             DateTime T;
-            if (Is_Test_Mode == false)
+            if ( SharedData.UseDBM_Replay_Time == false)
                 T = DateTime.UtcNow + TimeToAdd;
             else
             {
@@ -28,7 +26,6 @@ namespace AsterixDisplayAnalyser
             }
 
             string DateTimeOut = "'" + T.Year.ToString() + "-" + T.Month + "-" + T.Day.ToString() + " " + T.Hour.ToString() + ":" + T.Minute.ToString() + ":" + T.Second.ToString() + "'";
-
             return DateTimeOut;
         }
     }

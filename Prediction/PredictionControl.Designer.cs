@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.checkBox3Active = new System.Windows.Forms.CheckBox();
             this.checkBox1Active = new System.Windows.Forms.CheckBox();
@@ -65,6 +66,11 @@
             this.labelPredictionTimeReadout = new System.Windows.Forms.Label();
             this.checkBoxTestMode = new System.Windows.Forms.CheckBox();
             this.groupBoxSimMode = new System.Windows.Forms.GroupBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.labelStartTime = new System.Windows.Forms.Label();
+            this.labelCurrentTime = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.timer = new System.Windows.Forms.Timer(this.components);
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -432,8 +438,9 @@
             // 
             // trackBarPrediction
             // 
+            this.trackBarPrediction.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.trackBarPrediction.LargeChange = 60;
-            this.trackBarPrediction.Location = new System.Drawing.Point(12, 127);
+            this.trackBarPrediction.Location = new System.Drawing.Point(12, 120);
             this.trackBarPrediction.Maximum = 600;
             this.trackBarPrediction.Minimum = 1;
             this.trackBarPrediction.Name = "trackBarPrediction";
@@ -446,7 +453,7 @@
             // labelPredictionTimeReadout
             // 
             this.labelPredictionTimeReadout.AutoSize = true;
-            this.labelPredictionTimeReadout.Location = new System.Drawing.Point(18, 158);
+            this.labelPredictionTimeReadout.Location = new System.Drawing.Point(22, 145);
             this.labelPredictionTimeReadout.Name = "labelPredictionTimeReadout";
             this.labelPredictionTimeReadout.Size = new System.Drawing.Size(68, 13);
             this.labelPredictionTimeReadout.TabIndex = 7;
@@ -455,24 +462,70 @@
             // checkBoxTestMode
             // 
             this.checkBoxTestMode.AutoSize = true;
-            this.checkBoxTestMode.Checked = true;
-            this.checkBoxTestMode.CheckState = System.Windows.Forms.CheckState.Checked;
             this.checkBoxTestMode.Location = new System.Drawing.Point(6, 17);
             this.checkBoxTestMode.Name = "checkBoxTestMode";
-            this.checkBoxTestMode.Size = new System.Drawing.Size(73, 17);
+            this.checkBoxTestMode.Size = new System.Drawing.Size(145, 17);
             this.checkBoxTestMode.TabIndex = 8;
-            this.checkBoxTestMode.Text = "Sim Mode";
+            this.checkBoxTestMode.Text = "Use DBM/REPLAY Time";
             this.checkBoxTestMode.UseVisualStyleBackColor = true;
+            this.checkBoxTestMode.CheckedChanged += new System.EventHandler(this.checkBoxTestMode_CheckedChanged);
             // 
             // groupBoxSimMode
             // 
+            this.groupBoxSimMode.BackColor = System.Drawing.SystemColors.ButtonShadow;
+            this.groupBoxSimMode.Controls.Add(this.labelCurrentTime);
+            this.groupBoxSimMode.Controls.Add(this.label11);
+            this.groupBoxSimMode.Controls.Add(this.labelStartTime);
+            this.groupBoxSimMode.Controls.Add(this.label4);
             this.groupBoxSimMode.Controls.Add(this.checkBoxTestMode);
-            this.groupBoxSimMode.Location = new System.Drawing.Point(18, 174);
+            this.groupBoxSimMode.Location = new System.Drawing.Point(10, 174);
             this.groupBoxSimMode.Name = "groupBoxSimMode";
-            this.groupBoxSimMode.Size = new System.Drawing.Size(410, 40);
+            this.groupBoxSimMode.Size = new System.Drawing.Size(418, 40);
             this.groupBoxSimMode.TabIndex = 9;
             this.groupBoxSimMode.TabStop = false;
-            this.groupBoxSimMode.Text = "Simulation";
+            this.groupBoxSimMode.Text = "DBM/REPLAY TIME CONTROL";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(179, 16);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(58, 13);
+            this.label4.TabIndex = 9;
+            this.label4.Text = "Start Time:";
+            // 
+            // labelStartTime
+            // 
+            this.labelStartTime.AutoSize = true;
+            this.labelStartTime.Location = new System.Drawing.Point(233, 16);
+            this.labelStartTime.Name = "labelStartTime";
+            this.labelStartTime.Size = new System.Drawing.Size(27, 13);
+            this.labelStartTime.TabIndex = 10;
+            this.labelStartTime.Text = "N/A";
+            // 
+            // labelCurrentTime
+            // 
+            this.labelCurrentTime.AutoSize = true;
+            this.labelCurrentTime.Location = new System.Drawing.Point(355, 16);
+            this.labelCurrentTime.Name = "labelCurrentTime";
+            this.labelCurrentTime.Size = new System.Drawing.Size(27, 13);
+            this.labelCurrentTime.TabIndex = 12;
+            this.labelCurrentTime.Text = "N/A";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.BackColor = System.Drawing.SystemColors.ButtonShadow;
+            this.label11.Location = new System.Drawing.Point(288, 16);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(70, 13);
+            this.label11.TabIndex = 11;
+            this.label11.Text = "Current Time:";
+            // 
+            // timer
+            // 
+            this.timer.Interval = 1000;
+            this.timer.Tick += new System.EventHandler(this.timer_Tick);
             // 
             // PredictionControl
             // 
@@ -548,6 +601,11 @@
         private System.Windows.Forms.Label labelPredictionTimeReadout;
         private System.Windows.Forms.CheckBox checkBoxTestMode;
         private System.Windows.Forms.GroupBox groupBoxSimMode;
+        private System.Windows.Forms.Label labelStartTime;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label labelCurrentTime;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Timer timer;
 
 
 

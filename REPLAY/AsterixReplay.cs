@@ -181,11 +181,10 @@ namespace AsterixDisplayAnalyser
                                 FilePosition = BinaryReader.BaseStream.Position;
 
                             }
-                            catch(Exception e)
+                            catch
                             {
-                                MessageBox.Show(e.Message);
+                               
                             }
-
                         }
                     }
                 }

@@ -170,17 +170,34 @@ namespace AsterixDisplayAnalyser
             if ((AsterixReplay.LANReplay.GetCurrentStatus() == AsterixReplay.ReplayStatus.Connected) || (AsterixReplay.LANReplay.GetCurrentStatus() == AsterixReplay.ReplayStatus.Paused))
             {
                 AsterixReplay.LANReplay.Start();
-                this.btnStartPause.Text = "Pause";
+                if (this.checkBoxPM.Checked)
+                    this.btnStartPause.Text = "Stop";
+                else
+                    this.btnStartPause.Text = "Pause";
                 this.progressBar1.Visible = true;
                 timerMonitorReplay.Enabled = true;
                 P_Test.TimeHanlder.StartSession();
             }
             else if (AsterixReplay.LANReplay.GetCurrentStatus() == AsterixReplay.ReplayStatus.Replaying)
             {
-                AsterixReplay.LANReplay.Pause();
-                this.btnStartPause.Text = "Start";
-                this.progressBar1.Visible = false;
-                timerMonitorReplay.Enabled = false;
+                if (this.checkBoxPM.Checked)
+                {
+                    AsterixReplay.LANReplay.Disconnect();
+                    this.btnStartPause.Text = "Start";
+                    this.btnConnectDisconnect.Text = "Connect";
+                    this.btnStartPause.Enabled = false;
+                    this.progressBar1.Visible = false;
+                    ReplayHasCompleted = false;
+                }
+                else
+                {
+                    AsterixReplay.LANReplay.Pause();
+                    this.btnStartPause.Text = "Start";
+                    this.progressBar1.Visible = false;
+                    timerMonitorReplay.Enabled = false;
+                }
+
+                P_Test.TimeHanlder.StopSession();
             }
         }
 
@@ -304,7 +321,7 @@ namespace AsterixDisplayAnalyser
 
         private void numericUpDown1_ValueChanged(object sender, EventArgs e)
         {
-              AsterixReplay.LANReplay.SetReplaySpeed((int)this.numericUpDown1.Value);
+            AsterixReplay.LANReplay.SetReplaySpeed((int)this.numericUpDown1.Value);
         }
 
         private void FrmReplayForm_VisibleChanged(object sender, EventArgs e)

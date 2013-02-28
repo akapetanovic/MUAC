@@ -26,6 +26,8 @@ namespace AsterixDisplayAnalyser
             this.checkBox1Active.Checked = SharedData.Prediction1_Enabled;
             this.checkBox2Active.Checked = SharedData.Prediction2_Enabled;
             this.checkBox3Active.Checked = SharedData.Prediction3_Enabled;
+
+            this.checkBoxTestMode.Checked = SharedData.UseDBM_Replay_Time;
         }
 
         private void SyncConnectionData()
@@ -76,7 +78,7 @@ namespace AsterixDisplayAnalyser
                 this.dataGridViewDataSet.Rows.Clear();
                 foreach (MySqlProvider.PredictionDataSetOneRow Item in DataRetreived)
                     this.dataGridViewDataSet.Rows.Add(Item.ACID, Item.Lat, Item.Lon, Item.Time, Item.FL, Item.Accuracy);
-                
+
             }
             // Get data based on Time only
             else if (this.comboBoxCriteria.SelectedIndex == 2)
@@ -110,7 +112,7 @@ namespace AsterixDisplayAnalyser
                 Table = MySqlProvider.PredictionTableNumberType.Three;
             return Table;
         }
-        
+
         // This method returns a list of ALL available data from the pre-selected table
         // It is then up to the user to decide what data to use
         private System.Collections.Generic.List<MySqlProvider.PredictionDataSetOneRow> GetAllData()
@@ -197,7 +199,7 @@ namespace AsterixDisplayAnalyser
                     this.comboBoxACID.Items.Add(Item.ACID);
 
                 if (this.comboBoxACID.Items.Count > 0)
-                this.comboBoxACID.SelectedIndex = 0;
+                    this.comboBoxACID.SelectedIndex = 0;
             }
         }
 
@@ -223,6 +225,36 @@ namespace AsterixDisplayAnalyser
             min = this.trackBarPrediction.Value - (h * 60);
             this.labelPredictionTimeReadout.Text = h.ToString() + " h : " + min.ToString() + " min";
             SharedData.LookAheadTime = new TimeSpan(h, min, 0);
+        }
+
+        private void timer_Tick(object sender, EventArgs e)
+        {
+            if (P_Test.TimeHanlder.SessionActive)
+            {
+                this.labelStartTime.Text = P_Test.TimeHanlder.DBM_Start_Time.Hour.ToString() + ":" + P_Test.TimeHanlder.DBM_Start_Time.Minute.ToString() + ":" + P_Test.TimeHanlder.DBM_Start_Time.Second.ToString();
+                this.labelCurrentTime.Text = P_Test.TimeHanlder.GetDBMTime().Hour.ToString() + ":" + P_Test.TimeHanlder.GetDBMTime().Minute.ToString() + ":" + P_Test.TimeHanlder.GetDBMTime().Second.ToString();
+            }
+            else
+            {
+                this.labelStartTime.Text = "N/A";
+                this.labelCurrentTime.Text = "N/A";
+            }
+        }
+
+        private void checkBoxTestMode_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBoxTestMode.Checked)
+            {
+                this.timer.Enabled = true;
+                SharedData.UseDBM_Replay_Time = this.checkBoxTestMode.Checked;
+            }
+            else
+            {
+                this.labelStartTime.Text = "N/A";
+                this.labelCurrentTime.Text = "N/A";
+                this.timer.Enabled = false;
+                SharedData.UseDBM_Replay_Time = this.checkBoxTestMode.Checked;
+            }
         }
     }
 }

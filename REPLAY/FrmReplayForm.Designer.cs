@@ -53,6 +53,7 @@
             this.label6 = new System.Windows.Forms.Label();
             this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
             this.button1 = new System.Windows.Forms.Button();
+            this.checkBoxPM = new System.Windows.Forms.CheckBox();
             this.groupBox1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
@@ -302,12 +303,25 @@
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
+            // checkBoxPM
+            // 
+            this.checkBoxPM.AutoSize = true;
+            this.checkBoxPM.Checked = true;
+            this.checkBoxPM.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkBoxPM.Location = new System.Drawing.Point(259, 0);
+            this.checkBoxPM.Name = "checkBoxPM";
+            this.checkBoxPM.Size = new System.Drawing.Size(103, 17);
+            this.checkBoxPM.TabIndex = 47;
+            this.checkBoxPM.Text = "Prediction Mode";
+            this.checkBoxPM.UseVisualStyleBackColor = true;
+            // 
             // FrmReplayForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDark;
             this.ClientSize = new System.Drawing.Size(362, 276);
+            this.Controls.Add(this.checkBoxPM);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.numericUpDown1);
             this.Controls.Add(this.label6);
@@ -366,5 +380,6 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.NumericUpDown numericUpDown1;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.CheckBox checkBoxPM;
     }
 }

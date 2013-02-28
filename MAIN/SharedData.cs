@@ -50,6 +50,7 @@ namespace AsterixDisplayAnalyser
         public static bool Prediction2_Enabled = false;
         public static bool Prediction3_Enabled = false;
         public static TimeSpan LookAheadTime = new TimeSpan(0, 1, 0);
+        public static bool UseDBM_Replay_Time = false;
 
         public static void ResetConnectionParameters()
         {

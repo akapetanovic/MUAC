@@ -48,14 +48,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Asterix-Display-Analyser.exe" size="566272">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Asterix-Display-Analyser.exe" size="567808">
       <assemblyIdentity name="Asterix-Display-Analyser" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>6ANgMfXsHhWBHrphoBjWoOol6FI=</dsig:DigestValue>
+        <dsig:DigestValue>SEXo0vZnnvwin6yttFJmwebgCCg=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -119,13 +119,13 @@
       </hash>
     </dependentAssembly>
   </dependency>
-  <file name="Asterix-Display-Analyser.exe.config" size="7796">
+  <file name="Asterix-Display-Analyser.exe.config" size="7795">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>NwzEbZAuoMlxP95M4xsPPT/15/8=</dsig:DigestValue>
+      <dsig:DigestValue>TpDRLgzTCsT9awo6au5GoIlIB5g=</dsig:DigestValue>
     </hash>
   </file>
   <file name="DARR.ico" size="1078">

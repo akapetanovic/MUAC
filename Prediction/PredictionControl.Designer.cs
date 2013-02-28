@@ -63,6 +63,7 @@
             this.ACUR = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.trackBarPrediction = new System.Windows.Forms.TrackBar();
             this.labelPredictionTimeReadout = new System.Windows.Forms.Label();
+            this.checkBoxTestMode = new System.Windows.Forms.CheckBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -202,6 +203,7 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.BackColor = System.Drawing.SystemColors.ControlDark;
             this.groupBox3.Controls.Add(this.label8);
             this.groupBox3.Controls.Add(this.label9);
             this.groupBox3.Controls.Add(this.numericUpDownMin);
@@ -361,7 +363,7 @@
             // 
             this.button2.Location = new System.Drawing.Point(10, 585);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(427, 21);
+            this.button2.Size = new System.Drawing.Size(347, 21);
             this.button2.TabIndex = 3;
             this.button2.Text = "Get Data";
             this.button2.UseVisualStyleBackColor = true;
@@ -447,11 +449,24 @@
             this.labelPredictionTimeReadout.TabIndex = 7;
             this.labelPredictionTimeReadout.Text = "00 h : 00 min";
             // 
+            // checkBoxTestMode
+            // 
+            this.checkBoxTestMode.AutoSize = true;
+            this.checkBoxTestMode.Checked = true;
+            this.checkBoxTestMode.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkBoxTestMode.Location = new System.Drawing.Point(363, 588);
+            this.checkBoxTestMode.Name = "checkBoxTestMode";
+            this.checkBoxTestMode.Size = new System.Drawing.Size(77, 17);
+            this.checkBoxTestMode.TabIndex = 8;
+            this.checkBoxTestMode.Text = "Test Mode";
+            this.checkBoxTestMode.UseVisualStyleBackColor = true;
+            // 
             // PredictionControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(440, 608);
+            this.Controls.Add(this.checkBoxTestMode);
             this.Controls.Add(this.labelPredictionTimeReadout);
             this.Controls.Add(this.trackBarPrediction);
             this.Controls.Add(this.dataGridViewDataSet);
@@ -516,6 +531,7 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TrackBar trackBarPrediction;
         private System.Windows.Forms.Label labelPredictionTimeReadout;
+        private System.Windows.Forms.CheckBox checkBoxTestMode;
 
 
 

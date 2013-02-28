@@ -71,6 +71,12 @@ namespace AsterixDisplayAnalyser
             // Get data based on ACID and Time filter
             else if (this.comboBoxCriteria.SelectedIndex == 1)
             {
+                System.Collections.Generic.List<MySqlProvider.PredictionDataSetOneRow> DataRetreived = GetOneRecordPerTimeAndACID();
+
+                this.dataGridViewDataSet.Rows.Clear();
+                foreach (MySqlProvider.PredictionDataSetOneRow Item in DataRetreived)
+                    this.dataGridViewDataSet.Rows.Add(Item.ACID, Item.Lat, Item.Lon, Item.Time, Item.FL, Item.Accuracy);
+                
             }
             // Get data based on Time only
             else if (this.comboBoxCriteria.SelectedIndex == 2)
@@ -126,8 +132,16 @@ namespace AsterixDisplayAnalyser
         private System.Collections.Generic.List<MySqlProvider.PredictionDataSetOneRow> GetAllDataForDateTime()
         {
             MySqlProvider MySQL = new MySqlProvider();
-            TimeSpan TimeToAdd = new TimeSpan(0, 0, 0);
-            return MySQL.GetAllDataForTime(GetTableChoice(), TimeToAdd);
+            TimeSpan TimeToAdd = new TimeSpan((int)this.numericUpDownHrs.Value, (int)this.numericUpDownMin.Value, 0);
+            return MySQL.GetAllDataForTime(GetTableChoice(), TimeToAdd, true);
+        }
+
+        // This method returns one distinct record of data for the specified time and ACID
+        private System.Collections.Generic.List<MySqlProvider.PredictionDataSetOneRow> GetOneRecordPerTimeAndACID()
+        {
+            MySqlProvider MySQL = new MySqlProvider();
+            TimeSpan TimeToAdd = new TimeSpan((int)this.numericUpDownHrs.Value, (int)this.numericUpDownMin.Value, 0);
+            return MySQL.GetOneRecordPerTimeAndACID(GetTableChoice(), TimeToAdd, this.comboBoxACID.Text, true);
         }
 
         // This method returns a list of ALL available ACIDs from the currently selected table

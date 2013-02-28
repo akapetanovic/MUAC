@@ -173,6 +173,7 @@ namespace AsterixDisplayAnalyser
                 this.btnStartPause.Text = "Pause";
                 this.progressBar1.Visible = true;
                 timerMonitorReplay.Enabled = true;
+                P_Test.TimeHanlder.StartSession();
             }
             else if (AsterixReplay.LANReplay.GetCurrentStatus() == AsterixReplay.ReplayStatus.Replaying)
             {

@@ -304,6 +304,7 @@
     <Compile Include="Prediction\PredictionControl.Designer.cs">
       <DependentUpon>PredictionControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="Prediction\P_Test.cs" />
     <Compile Include="REC_AND_FORWARD\AppendDateTime.cs" />
     <Compile Include="GOOGLE EARTH\GoogleEarthProvider.cs">
       <SubType>Form</SubType>

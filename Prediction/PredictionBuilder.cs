@@ -14,7 +14,7 @@ namespace AsterixDisplayAnalyser
         public void Build_Prediction_Marker(PointLatLng Base_Position, string ACID, MySqlProvider.PredictionTableNumberType Table_Type, ref GMapOverlay Overlay)
         {
             MySqlProvider SqlProvider = new MySqlProvider();
-            System.Collections.Generic.List<MySqlProvider.PredictionDataSetOneRow> Record = SqlProvider.GetAllDataForTimeAndACID(Table_Type, SharedData.LookAheadTime, ACID);
+            System.Collections.Generic.List<MySqlProvider.PredictionDataSetOneRow> Record = SqlProvider.GetOneRecordPerTimeAndACID(Table_Type, SharedData.LookAheadTime, ACID, false);
 
             // If prediction data for the given parameters exists 
             // then lets add it to the display list.
@@ -23,17 +23,17 @@ namespace AsterixDisplayAnalyser
                 int LAT_DEG, LAT_MIN, LAT_SEC;
                 string tmp = "" + Record[0].Lat[0] + Record[0].Lat[1];
                 LAT_DEG = int.Parse(tmp);
-                tmp = "" + Record[0].Lat[2] + Record[3].Lat[1];
+                tmp = "" + Record[0].Lat[2] + Record[0].Lat[3];
                 LAT_MIN = int.Parse(tmp);
-                tmp = "" + Record[0].Lat[4] + Record[5].Lat[1];
+                tmp = "" + Record[0].Lat[4] + Record[0].Lat[5];
                 LAT_SEC = int.Parse(tmp);
 
                 int LON_DEG, LON_MIN, LON_SEC;
                 tmp = "" + Record[0].Lon[0] + Record[0].Lon[1];
                 LON_DEG = int.Parse(tmp);
-                tmp = "" + Record[0].Lon[2] + Record[3].Lon[1];
+                tmp = "" + Record[0].Lon[2] + Record[0].Lon[3];
                 LON_MIN = int.Parse(tmp);
-                tmp = "" + Record[0].Lon[4] + Record[5].Lon[1];
+                tmp = "" + Record[0].Lon[4] + Record[0].Lon[5];
                 LON_SEC = int.Parse(tmp);
 
                 GeoCordSystemDegMinSecUtilities.LatLongPrefix Lat_Prefix = GeoCordSystemDegMinSecUtilities.LatLongPrefix.Not_Valid;

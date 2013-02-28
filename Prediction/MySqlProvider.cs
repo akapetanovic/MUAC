@@ -178,11 +178,11 @@ namespace AsterixDisplayAnalyser
 
         ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         // This method returns all the available data from the given table number for the specifed Time
-        public System.Collections.Generic.List<PredictionDataSetOneRow> GetAllDataForTime(PredictionTableNumberType TableNumber, TimeSpan TimeToAdd)
+        public System.Collections.Generic.List<PredictionDataSetOneRow> GetAllDataForTime(PredictionTableNumberType TableNumber, TimeSpan TimeToAdd, bool DBM_Lookup)
         {
             System.Collections.Generic.List<PredictionDataSetOneRow> DataRetreived = new System.Collections.Generic.List<PredictionDataSetOneRow>();
 
-            string Date_And_Time = MySqlDateTimeUtility.BuildMySqlDateTimeString(TimeToAdd);
+            string Date_And_Time = MySqlDateTimeUtility.BuildMySqlDateTimeString(TimeToAdd, DBM_Lookup, TableNumber);
             
             //  Get the data for ceratin time range
             // Get the data for ceratin time range
@@ -195,7 +195,7 @@ namespace AsterixDisplayAnalyser
                                 fl,
                                 acc
                             FROM " + GetTableString(TableNumber) +
-                " WHERE time BETWEEN " + Date_And_Time + " AND " + Date_And_Time + " GROUP by acid ORDER by time DESC";
+                " WHERE time >= " + Date_And_Time;
 
             MySqlConnection conn = new MySqlConnection(connString);
 
@@ -233,11 +233,11 @@ namespace AsterixDisplayAnalyser
 
         ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         // This method returns one record of data for specifed Time and ACID
-        public System.Collections.Generic.List<PredictionDataSetOneRow> GetAllDataForTimeAndACID(PredictionTableNumberType TableNumber, TimeSpan TimeToAdd, string ACID)
+        public System.Collections.Generic.List<PredictionDataSetOneRow> GetOneRecordPerTimeAndACID(PredictionTableNumberType TableNumber, TimeSpan TimeToAdd, string ACID, bool DBM_Lookup)
         {
             System.Collections.Generic.List<PredictionDataSetOneRow> DataRetreived = new System.Collections.Generic.List<PredictionDataSetOneRow>();
 
-            string Date_And_Time = MySqlDateTimeUtility.BuildMySqlDateTimeString(TimeToAdd);
+            string Date_And_Time = MySqlDateTimeUtility.BuildMySqlDateTimeString(TimeToAdd, DBM_Lookup, TableNumber);
 
             //  Get the data for ceratin time range
             // Get the data for ceratin time range
@@ -250,7 +250,7 @@ namespace AsterixDisplayAnalyser
                                 fl,
                                 acc
                             FROM " + GetTableString(TableNumber) +
-                " WHERE time BETWEEN " + Date_And_Time + " AND " + Date_And_Time + " GROUP by acid ORDER by time DESC";
+                " WHERE time >= " + Date_And_Time + " AND acid = " + "'" + ACID + "'" + " LIMIT 1";
 
             MySqlConnection conn = new MySqlConnection(connString);
 
@@ -312,6 +312,53 @@ namespace AsterixDisplayAnalyser
                     {
                         OneRow.ACID = rdr.GetString(0);
                         DataRetreived.Add(OneRow);
+                    }
+                }
+                rdr.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+
+            conn.Close();
+
+            return DataRetreived;
+        }
+
+        ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        // This method returns the time of the first record from a DBM.
+        public System.Collections.Generic.List<PredictionDataSetOneRow> GetFirstTimeFromTable(PredictionTableNumberType TableNumber)
+        {
+            System.Collections.Generic.List<PredictionDataSetOneRow> DataRetreived = new System.Collections.Generic.List<PredictionDataSetOneRow>();
+
+            string sql = @" 
+                            SELECT 
+                                time
+                            FROM " + GetTableString(TableNumber) + " ORDER BY time ASC";
+
+            MySqlConnection conn = new MySqlConnection(connString);
+
+            try
+            {
+                conn.Open();
+                MySqlCommand cmd = new MySqlCommand(sql, conn);
+                MySqlDataReader rdr = cmd.ExecuteReader();
+
+                while (rdr.Read())
+                {
+                    PredictionDataSetOneRow OneRow = new PredictionDataSetOneRow();
+                    try
+                    {
+                        if (rdr.GetDateTime(0) != null)
+                        {
+                            OneRow.Time = rdr.GetDateTime(0);
+                            DataRetreived.Add(OneRow);
+                            break;
+                        }
+                    }
+                    catch
+                    {
                     }
                 }
                 rdr.Close();

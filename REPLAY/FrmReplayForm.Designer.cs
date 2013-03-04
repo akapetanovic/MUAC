@@ -49,7 +49,6 @@
             this.timerMonitorReplay = new System.Windows.Forms.Timer(this.components);
             this.label4 = new System.Windows.Forms.Label();
             this.lblBytesSent = new System.Windows.Forms.Label();
-            this.btnSetConnection = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
             this.button1 = new System.Windows.Forms.Button();
@@ -83,7 +82,6 @@
             this.txtboxIPAddress.Name = "txtboxIPAddress";
             this.txtboxIPAddress.Size = new System.Drawing.Size(203, 20);
             this.txtboxIPAddress.TabIndex = 24;
-            this.txtboxIPAddress.TextChanged += new System.EventHandler(this.txtboxIPAddress_TextChanged);
             // 
             // textboxPort
             // 
@@ -91,7 +89,6 @@
             this.textboxPort.Name = "textboxPort";
             this.textboxPort.Size = new System.Drawing.Size(203, 20);
             this.textboxPort.TabIndex = 26;
-            this.textboxPort.TextChanged += new System.EventHandler(this.textboxPort_TextChanged);
             // 
             // label11
             // 
@@ -124,7 +121,6 @@
             this.comboBoxNetworkInterface.Name = "comboBoxNetworkInterface";
             this.comboBoxNetworkInterface.Size = new System.Drawing.Size(203, 21);
             this.comboBoxNetworkInterface.TabIndex = 30;
-            this.comboBoxNetworkInterface.TextChanged += new System.EventHandler(this.comboBoxNetworkInterface_TextChanged);
             // 
             // menuStrip1
             // 
@@ -246,19 +242,6 @@
             this.lblBytesSent.TabIndex = 41;
             this.lblBytesSent.Text = "0 Bytes";
             // 
-            // btnSetConnection
-            // 
-            this.btnSetConnection.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.btnSetConnection.Enabled = false;
-            this.btnSetConnection.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSetConnection.Location = new System.Drawing.Point(235, 46);
-            this.btnSetConnection.Name = "btnSetConnection";
-            this.btnSetConnection.Size = new System.Drawing.Size(117, 25);
-            this.btnSetConnection.TabIndex = 43;
-            this.btnSetConnection.Text = "Set LAN Connection";
-            this.btnSetConnection.UseVisualStyleBackColor = false;
-            this.btnSetConnection.Click += new System.EventHandler(this.btnSetConnection_Click);
-            // 
             // label6
             // 
             this.label6.AutoSize = true;
@@ -308,7 +291,7 @@
             this.checkBoxPM.AutoSize = true;
             this.checkBoxPM.Checked = true;
             this.checkBoxPM.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBoxPM.Location = new System.Drawing.Point(259, 0);
+            this.checkBoxPM.Location = new System.Drawing.Point(249, 48);
             this.checkBoxPM.Name = "checkBoxPM";
             this.checkBoxPM.Size = new System.Drawing.Size(103, 17);
             this.checkBoxPM.TabIndex = 47;
@@ -325,7 +308,6 @@
             this.Controls.Add(this.button1);
             this.Controls.Add(this.numericUpDown1);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.btnSetConnection);
             this.Controls.Add(this.lblBytesSent);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label5);
@@ -376,7 +358,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label lblBytesSent;
         private System.Windows.Forms.ComboBox comboBoxNetworkInterface;
-        private System.Windows.Forms.Button btnSetConnection;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.NumericUpDown numericUpDown1;
         private System.Windows.Forms.Button button1;

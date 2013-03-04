@@ -57,18 +57,7 @@
             this.labelBytes1 = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.label7 = new System.Windows.Forms.Label();
-            this.shapeContainer1 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
-            this.lineShape11 = new Microsoft.VisualBasic.PowerPacks.LineShape();
-            this.lineShape10 = new Microsoft.VisualBasic.PowerPacks.LineShape();
-            this.lineShape9 = new Microsoft.VisualBasic.PowerPacks.LineShape();
-            this.lineShape5 = new Microsoft.VisualBasic.PowerPacks.LineShape();
-            this.lineShape4 = new Microsoft.VisualBasic.PowerPacks.LineShape();
-            this.lineShape1 = new Microsoft.VisualBasic.PowerPacks.LineShape();
-            this.lineShape8 = new Microsoft.VisualBasic.PowerPacks.LineShape();
-            this.lineShape7 = new Microsoft.VisualBasic.PowerPacks.LineShape();
-            this.lineShape6 = new Microsoft.VisualBasic.PowerPacks.LineShape();
-            this.lineShape3 = new Microsoft.VisualBasic.PowerPacks.LineShape();
-            this.lineShape2 = new Microsoft.VisualBasic.PowerPacks.LineShape();
+                     
             this.label8 = new System.Windows.Forms.Label();
             this.progressBar2 = new System.Windows.Forms.ProgressBar();
             this.progressBar3 = new System.Windows.Forms.ProgressBar();
@@ -112,8 +101,6 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.comboBoxNetworkInterface = new System.Windows.Forms.ComboBox();
             this.button5 = new System.Windows.Forms.Button();
-            this.shapeContainer2 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
-            this.lineShape12 = new Microsoft.VisualBasic.PowerPacks.LineShape();
             this.button6 = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
@@ -385,107 +372,7 @@
             // 
             // shapeContainer1
             // 
-            this.shapeContainer1.Location = new System.Drawing.Point(0, 0);
-            this.shapeContainer1.Margin = new System.Windows.Forms.Padding(0);
-            this.shapeContainer1.Name = "shapeContainer1";
-            this.shapeContainer1.Shapes.AddRange(new Microsoft.VisualBasic.PowerPacks.Shape[] {
-            this.lineShape11,
-            this.lineShape10,
-            this.lineShape9,
-            this.lineShape5,
-            this.lineShape4,
-            this.lineShape1});
-            this.shapeContainer1.Size = new System.Drawing.Size(908, 369);
-            this.shapeContainer1.TabIndex = 36;
-            this.shapeContainer1.TabStop = false;
-            // 
-            // lineShape11
-            // 
-            this.lineShape11.Name = "lineShape11";
-            this.lineShape11.X1 = 822;
-            this.lineShape11.X2 = 822;
-            this.lineShape11.Y1 = 141;
-            this.lineShape11.Y2 = 331;
-            // 
-            // lineShape10
-            // 
-            this.lineShape10.Name = "lineShape10";
-            this.lineShape10.X1 = 477;
-            this.lineShape10.X2 = 477;
-            this.lineShape10.Y1 = 142;
-            this.lineShape10.Y2 = 184;
-            // 
-            // lineShape9
-            // 
-            this.lineShape9.Name = "lineShape9";
-            this.lineShape9.X1 = 3;
-            this.lineShape9.X2 = 911;
-            this.lineShape9.Y1 = 330;
-            this.lineShape9.Y2 = 332;
-            // 
-            // lineShape5
-            // 
-            this.lineShape5.Name = "lineShape5";
-            this.lineShape5.X1 = 618;
-            this.lineShape5.X2 = 771;
-            this.lineShape5.Y1 = 20;
-            this.lineShape5.Y2 = 20;
-            // 
-            // lineShape4
-            // 
-            this.lineShape4.Name = "lineShape4";
-            this.lineShape4.X1 = -3;
-            this.lineShape4.X2 = 913;
-            this.lineShape4.Y1 = 142;
-            this.lineShape4.Y2 = 142;
-            // 
-            // lineShape1
-            // 
-            this.lineShape1.Name = "lineShape1";
-            this.lineShape1.X1 = -2;
-            this.lineShape1.X2 = 956;
-            this.lineShape1.Y1 = 184;
-            this.lineShape1.Y2 = 184;
-            // 
-            // lineShape8
-            // 
-            this.lineShape8.Name = "lineShape8";
-            this.lineShape8.X1 = 350;
-            this.lineShape8.X2 = 496;
-            this.lineShape8.Y1 = 24;
-            this.lineShape8.Y2 = 24;
-            // 
-            // lineShape7
-            // 
-            this.lineShape7.Name = "lineShape7";
-            this.lineShape7.X1 = 350;
-            this.lineShape7.X2 = 497;
-            this.lineShape7.Y1 = 6;
-            this.lineShape7.Y2 = 6;
-            // 
-            // lineShape6
-            // 
-            this.lineShape6.Name = "lineShape6";
-            this.lineShape6.X1 = 496;
-            this.lineShape6.X2 = 496;
-            this.lineShape6.Y1 = 111;
-            this.lineShape6.Y2 = 7;
-            // 
-            // lineShape3
-            // 
-            this.lineShape3.Name = "lineShape3";
-            this.lineShape3.X1 = 350;
-            this.lineShape3.X2 = 350;
-            this.lineShape3.Y1 = 112;
-            this.lineShape3.Y2 = 6;
-            // 
-            // lineShape2
-            // 
-            this.lineShape2.Name = "lineShape2";
-            this.lineShape2.X1 = 423;
-            this.lineShape2.X2 = 423;
-            this.lineShape2.Y1 = 323;
-            this.lineShape2.Y2 = 7;
+           
             // 
             // label8
             // 
@@ -916,7 +803,6 @@
             this.groupBox1.Controls.Add(this.textboxPort);
             this.groupBox1.Controls.Add(this.textBoxConnectionName);
             this.groupBox1.Controls.Add(this.label11);
-            this.groupBox1.Controls.Add(this.shapeContainer2);
             this.groupBox1.Location = new System.Drawing.Point(51, 3);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(508, 135);
@@ -943,30 +829,6 @@
             this.button5.Text = "Clear";
             this.button5.UseVisualStyleBackColor = false;
             this.button5.Click += new System.EventHandler(this.button5_Click);
-            // 
-            // shapeContainer2
-            // 
-            this.shapeContainer2.Location = new System.Drawing.Point(3, 16);
-            this.shapeContainer2.Margin = new System.Windows.Forms.Padding(0);
-            this.shapeContainer2.Name = "shapeContainer2";
-            this.shapeContainer2.Shapes.AddRange(new Microsoft.VisualBasic.PowerPacks.Shape[] {
-            this.lineShape12,
-            this.lineShape8,
-            this.lineShape7,
-            this.lineShape6,
-            this.lineShape3,
-            this.lineShape2});
-            this.shapeContainer2.Size = new System.Drawing.Size(502, 116);
-            this.shapeContainer2.TabIndex = 24;
-            this.shapeContainer2.TabStop = false;
-            // 
-            // lineShape12
-            // 
-            this.lineShape12.Name = "lineShape12";
-            this.lineShape12.X1 = 351;
-            this.lineShape12.X2 = 498;
-            this.lineShape12.Y1 = 111;
-            this.lineShape12.Y2 = 111;
             // 
             // button6
             // 
@@ -1040,7 +902,7 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.menuStrip1);
-            this.Controls.Add(this.shapeContainer1);
+           
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "FrmAstxRecFrwdForm";
@@ -1089,8 +951,7 @@
         private System.Windows.Forms.Label labelBytes1;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Label label7;
-        private Microsoft.VisualBasic.PowerPacks.ShapeContainer shapeContainer1;
-        private Microsoft.VisualBasic.PowerPacks.LineShape lineShape1;
+       
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.ProgressBar progressBar2;
         private System.Windows.Forms.ProgressBar progressBar3;
@@ -1101,23 +962,17 @@
         private System.Windows.Forms.Label labelBytes4;
         private System.Windows.Forms.Label labelBytes5;
         private System.Windows.Forms.Button button4;
-        private Microsoft.VisualBasic.PowerPacks.LineShape lineShape6;
-        private Microsoft.VisualBasic.PowerPacks.LineShape lineShape5;
-        private Microsoft.VisualBasic.PowerPacks.LineShape lineShape4;
-        private Microsoft.VisualBasic.PowerPacks.LineShape lineShape3;
-        private Microsoft.VisualBasic.PowerPacks.LineShape lineShape2;
+       
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.CheckBox checkBoxF1;
-        private Microsoft.VisualBasic.PowerPacks.LineShape lineShape7;
         private System.Windows.Forms.CheckBox checkBoxF5;
         private System.Windows.Forms.CheckBox checkBoxF4;
         private System.Windows.Forms.CheckBox checkBoxF3;
         private System.Windows.Forms.CheckBox checkBoxF2;
         private System.Windows.Forms.Button btnAddForwarding;
-        private Microsoft.VisualBasic.PowerPacks.LineShape lineShape8;
         private System.Windows.Forms.NumericUpDown numericUpDown1;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label16;
@@ -1125,7 +980,6 @@
         private System.Windows.Forms.ListBox listBoxForwardingInterface;
         private System.Windows.Forms.ListBox listBoxForwardingPort;
         private System.Windows.Forms.ListBox listBoxForwardingMulticast;
-        private Microsoft.VisualBasic.PowerPacks.LineShape lineShape9;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.CheckBox chkBoxReplayFormatEnabled1;
@@ -1139,11 +993,7 @@
         private System.Windows.Forms.ProgressBar progressBarF2;
         private System.Windows.Forms.ProgressBar progressBarF1;
         private System.Windows.Forms.Label label20;
-        private Microsoft.VisualBasic.PowerPacks.LineShape lineShape10;
-        private Microsoft.VisualBasic.PowerPacks.LineShape lineShape11;
         private System.Windows.Forms.GroupBox groupBox1;
-        private Microsoft.VisualBasic.PowerPacks.ShapeContainer shapeContainer2;
-        private Microsoft.VisualBasic.PowerPacks.LineShape lineShape12;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.ComboBox comboBoxNetworkInterface;

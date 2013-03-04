@@ -331,6 +331,11 @@ namespace AsterixDisplayAnalyser
 
         private void button1_Click(object sender, EventArgs e)
         {
+            HandleStopStartLogic();
+        }
+
+        public void HandleStopStartLogic()
+        {
             if (SharedData.bool_Listen_for_Data == true)
             {
                 TerminateASTERIXListenForDataThread();

@@ -190,14 +190,12 @@ namespace AsterixDisplayAnalyser
             /////////////////////////////////////////////////////////////
             // IMAGE ATTRIBUTES
             /////////////////////////////////////////////////////////////
-            this.numericUpDown_X.Value = DisplayAttribute.ImageSize.Width;
-            this.numericUpDown_Y.Value = DisplayAttribute.ImageSize.Height;
-            this.pictureBox.BackColor = Color.FromName(this.comboBoxBackgroundColor.Text);
+      
 
             UpdateSampleLine();
             UpdateSampleText();
             UpdateAreaPolygonSample();
-            UpdatePictureSample();
+          
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
@@ -212,7 +210,7 @@ namespace AsterixDisplayAnalyser
             NewDisplayAttribute.LineStyle = DisplayAttributes.GetLineStypefromString(this.comboBoxLineStyleChoice.Text);
 
             NewDisplayAttribute.AreaPolygonColor = Color.FromName(this.comboBoxAreaPolygonColorChoice.Text);
-            NewDisplayAttribute.ImageSize = new Size((int)this.numericUpDown_X.Value, (int)this.numericUpDown_Y.Value);
+           
             DisplayAttributes.SetDisplayAttribute((DisplayAttributes.DisplayItemsType)Enum.Parse(typeof(DisplayAttributes.DisplayItemsType), NewDisplayAttribute.ItemName, true), NewDisplayAttribute);
 
            // Always update the background color as well
@@ -255,7 +253,7 @@ namespace AsterixDisplayAnalyser
             this.panelTextAttributes.BackColor = Color.FromName(color);
             this.panelLineAttributes.BackColor = Color.FromName(color);
             this.panelAreaPolygonColor.BackColor = Color.FromName(color);
-            this.pictureBox.BackColor = Color.FromName(this.comboBoxBackgroundColor.Text);
+         
         }
 
         private void comboBoxBackgroundColor_DrawItem(object sender, DrawItemEventArgs e)
@@ -273,16 +271,7 @@ namespace AsterixDisplayAnalyser
             DrawStringandRectangleinComboBox(sender, e);
         }
 
-        private void numericUpDown_Y_ValueChanged(object sender, EventArgs e)
-        {
-            UpdatePictureSample();
-
-        }
-
-        private void numericUpDown_X_ValueChanged(object sender, EventArgs e)
-        {
-            UpdatePictureSample();
-        }
+       
 
         private void UpdateSampleText()
         {
@@ -358,10 +347,7 @@ namespace AsterixDisplayAnalyser
             myBrush.Dispose();
         }
 
-        private void UpdatePictureSample()
-        {
-            this.pictureBox.Size = new Size((int)this.numericUpDown_X.Value, (int)this.numericUpDown_Y.Value);
-        }
+       
 
         private void button2_Click(object sender, EventArgs e)
         {

@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DisplayAttibutePicker));
             this.comboBoxTextColorChoice = new System.Windows.Forms.ComboBox();
             this.panelTextAttributes = new System.Windows.Forms.Panel();
             this.labelSampleText = new System.Windows.Forms.Label();
@@ -54,15 +53,6 @@
             this.comboBoxTextFontChoice = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.comboBoxTextSizeChoice = new System.Windows.Forms.ComboBox();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.pictureBox = new System.Windows.Forms.PictureBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.numericUpDown_Y = new System.Windows.Forms.NumericUpDown();
-            this.numericUpDown_X = new System.Windows.Forms.NumericUpDown();
-            this.label6 = new System.Windows.Forms.Label();
-            this.shapeContainer1 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
-            this.lineShape2 = new Microsoft.VisualBasic.PowerPacks.LineShape();
-            this.lineShape1 = new Microsoft.VisualBasic.PowerPacks.LineShape();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.comboBoxBackgroundColor = new System.Windows.Forms.ComboBox();
             this.panelBackgroundColor = new System.Windows.Forms.Panel();
@@ -85,10 +75,6 @@
             this.groupBox4.SuspendLayout();
             this.groupBoxLineAttributes.SuspendLayout();
             this.groupBoxTextAttributes.SuspendLayout();
-            this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_Y)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_X)).BeginInit();
             this.groupBox3.SuspendLayout();
             this.groupBox5.SuspendLayout();
             this.SuspendLayout();
@@ -145,7 +131,7 @@
             // 
             this.btnUpdate.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnUpdate.Location = new System.Drawing.Point(146, 627);
+            this.btnUpdate.Location = new System.Drawing.Point(147, 528);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(93, 23);
             this.btnUpdate.TabIndex = 4;
@@ -167,13 +153,12 @@
             this.groupBox1.Controls.Add(this.groupBox4);
             this.groupBox1.Controls.Add(this.groupBoxLineAttributes);
             this.groupBox1.Controls.Add(this.groupBoxTextAttributes);
-            this.groupBox1.Controls.Add(this.groupBox2);
             this.groupBox1.Controls.Add(this.comboBoxDataItem);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(6, 139);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(364, 482);
+            this.groupBox1.Size = new System.Drawing.Size(364, 383);
             this.groupBox1.TabIndex = 6;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Display Attributes";
@@ -402,110 +387,6 @@
             this.comboBoxTextSizeChoice.TabIndex = 9;
             this.comboBoxTextSizeChoice.SelectedIndexChanged += new System.EventHandler(this.comboBoxTextSizeChoice_SelectedIndexChanged);
             // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.pictureBox);
-            this.groupBox2.Controls.Add(this.label3);
-            this.groupBox2.Controls.Add(this.numericUpDown_Y);
-            this.groupBox2.Controls.Add(this.numericUpDown_X);
-            this.groupBox2.Controls.Add(this.label6);
-            this.groupBox2.Controls.Add(this.shapeContainer1);
-            this.groupBox2.Location = new System.Drawing.Point(7, 372);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(349, 102);
-            this.groupBox2.TabIndex = 14;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Image Size (PIXELS)";
-            // 
-            // pictureBox
-            // 
-            this.pictureBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox.ErrorImage = ((System.Drawing.Image)(resources.GetObject("pictureBox.ErrorImage")));
-            this.pictureBox.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox.Image")));
-            this.pictureBox.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox.InitialImage")));
-            this.pictureBox.Location = new System.Drawing.Point(211, 53);
-            this.pictureBox.Name = "pictureBox";
-            this.pictureBox.Size = new System.Drawing.Size(15, 15);
-            this.pictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox.TabIndex = 16;
-            this.pictureBox.TabStop = false;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(3, 14);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(14, 13);
-            this.label3.TabIndex = 15;
-            this.label3.Text = "Y";
-            // 
-            // numericUpDown_Y
-            // 
-            this.numericUpDown_Y.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.numericUpDown_Y.Location = new System.Drawing.Point(20, 14);
-            this.numericUpDown_Y.Name = "numericUpDown_Y";
-            this.numericUpDown_Y.Size = new System.Drawing.Size(39, 20);
-            this.numericUpDown_Y.TabIndex = 14;
-            this.numericUpDown_Y.Value = new decimal(new int[] {
-            25,
-            0,
-            0,
-            0});
-            this.numericUpDown_Y.ValueChanged += new System.EventHandler(this.numericUpDown_Y_ValueChanged);
-            // 
-            // numericUpDown_X
-            // 
-            this.numericUpDown_X.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.numericUpDown_X.Location = new System.Drawing.Point(60, 76);
-            this.numericUpDown_X.Name = "numericUpDown_X";
-            this.numericUpDown_X.Size = new System.Drawing.Size(39, 20);
-            this.numericUpDown_X.TabIndex = 13;
-            this.numericUpDown_X.Value = new decimal(new int[] {
-            25,
-            0,
-            0,
-            0});
-            this.numericUpDown_X.ValueChanged += new System.EventHandler(this.numericUpDown_X_ValueChanged);
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(57, 61);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(14, 13);
-            this.label6.TabIndex = 12;
-            this.label6.Text = "X";
-            // 
-            // shapeContainer1
-            // 
-            this.shapeContainer1.Location = new System.Drawing.Point(3, 16);
-            this.shapeContainer1.Margin = new System.Windows.Forms.Padding(0);
-            this.shapeContainer1.Name = "shapeContainer1";
-            this.shapeContainer1.Shapes.AddRange(new Microsoft.VisualBasic.PowerPacks.Shape[] {
-            this.lineShape2,
-            this.lineShape1});
-            this.shapeContainer1.Size = new System.Drawing.Size(343, 83);
-            this.shapeContainer1.TabIndex = 0;
-            this.shapeContainer1.TabStop = false;
-            // 
-            // lineShape2
-            // 
-            this.lineShape2.Name = "lineShape2";
-            this.lineShape2.X1 = 7;
-            this.lineShape2.X2 = 6;
-            this.lineShape2.Y1 = 51;
-            this.lineShape2.Y2 = 1;
-            // 
-            // lineShape1
-            // 
-            this.lineShape1.Name = "lineShape1";
-            this.lineShape1.X1 = 8;
-            this.lineShape1.X2 = 55;
-            this.lineShape1.Y1 = 51;
-            this.lineShape1.Y2 = 51;
-            // 
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.comboBoxBackgroundColor);
@@ -550,7 +431,7 @@
             // 
             this.button1.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Location = new System.Drawing.Point(15, 626);
+            this.button1.Location = new System.Drawing.Point(16, 527);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(93, 23);
             this.button1.TabIndex = 7;
@@ -562,7 +443,7 @@
             // 
             this.button2.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Location = new System.Drawing.Point(277, 627);
+            this.button2.Location = new System.Drawing.Point(278, 528);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(93, 23);
             this.button2.TabIndex = 8;
@@ -684,7 +565,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.ClientSize = new System.Drawing.Size(384, 656);
+            this.ClientSize = new System.Drawing.Size(384, 558);
             this.Controls.Add(this.groupBox5);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.button2);
@@ -706,11 +587,6 @@
             this.groupBoxLineAttributes.PerformLayout();
             this.groupBoxTextAttributes.ResumeLayout(false);
             this.groupBoxTextAttributes.PerformLayout();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_Y)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_X)).EndInit();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             this.groupBox5.ResumeLayout(false);
@@ -732,14 +608,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ComboBox comboBoxTextFontChoice;
         private System.Windows.Forms.ComboBox comboBoxTextSizeChoice;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.NumericUpDown numericUpDown_X;
-        private Microsoft.VisualBasic.PowerPacks.ShapeContainer shapeContainer1;
-        private Microsoft.VisualBasic.PowerPacks.LineShape lineShape2;
-        private Microsoft.VisualBasic.PowerPacks.LineShape lineShape1;
-        private System.Windows.Forms.NumericUpDown numericUpDown_Y;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.ComboBox comboBoxLineWidth;
         private System.Windows.Forms.Label label7;
@@ -758,7 +626,6 @@
         private System.Windows.Forms.ComboBox comboBoxAreaPolygonColorChoice;
         private System.Windows.Forms.Panel panelAreaPolygonColor;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.PictureBox pictureBox;
         private System.Windows.Forms.Label labelSampleText;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.GroupBox groupBox5;

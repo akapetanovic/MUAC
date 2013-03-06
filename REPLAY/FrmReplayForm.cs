@@ -208,6 +208,8 @@ namespace AsterixDisplayAnalyser
                 }
 
                 P_Test.TimeHanlder.StopSession();
+                FormMain MainFrame = Application.OpenForms[0] as FormMain;
+                MainFrame.HandleStopStartLogic();
             }
         }
 

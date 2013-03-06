@@ -20,56 +20,7 @@ namespace AsterixDisplayAnalyser
             // then lets add it to the display list.
             if (Record.Count > 0)
             {
-                int LAT_DEG, LAT_MIN, LAT_SEC;
-                string tmp = "" + Record[0].Lat[0] + Record[0].Lat[1];
-                LAT_DEG = int.Parse(tmp);
-                tmp = "" + Record[0].Lat[2] + Record[0].Lat[3];
-                LAT_MIN = int.Parse(tmp);
-                tmp = "" + Record[0].Lat[4] + Record[0].Lat[5];
-                LAT_SEC = int.Parse(tmp);
-
-                int LON_DEG, LON_MIN, LON_SEC;
-                tmp = "" + Record[0].Lon[0] + Record[0].Lon[1];
-                LON_DEG = int.Parse(tmp);
-                tmp = "" + Record[0].Lon[2] + Record[0].Lon[3];
-                LON_MIN = int.Parse(tmp);
-                tmp = "" + Record[0].Lon[4] + Record[0].Lon[5];
-                LON_SEC = int.Parse(tmp);
-
-                GeoCordSystemDegMinSecUtilities.LatLongPrefix Lat_Prefix = GeoCordSystemDegMinSecUtilities.LatLongPrefix.Not_Valid;
-                GeoCordSystemDegMinSecUtilities.LatLongPrefix Lon_Prefix = GeoCordSystemDegMinSecUtilities.LatLongPrefix.Not_Valid;
-                switch (Record[0].Lat[6])
-                {
-                    case 'E':
-                        Lat_Prefix = GeoCordSystemDegMinSecUtilities.LatLongPrefix.E;
-                        break;
-                    case 'W':
-                        Lat_Prefix = GeoCordSystemDegMinSecUtilities.LatLongPrefix.W;
-                        break;
-                    case 'N':
-                        Lat_Prefix = GeoCordSystemDegMinSecUtilities.LatLongPrefix.N;
-                        break;
-                    case 'S':
-                        Lat_Prefix = GeoCordSystemDegMinSecUtilities.LatLongPrefix.S;
-                        break;
-                }
-                switch (Record[0].Lon[6])
-                {
-                    case 'E':
-                        Lon_Prefix = GeoCordSystemDegMinSecUtilities.LatLongPrefix.E;
-                        break;
-                    case 'W':
-                        Lon_Prefix = GeoCordSystemDegMinSecUtilities.LatLongPrefix.W;
-                        break;
-                    case 'N':
-                        Lon_Prefix = GeoCordSystemDegMinSecUtilities.LatLongPrefix.N;
-                        break;
-                    case 'S':
-                        Lon_Prefix = GeoCordSystemDegMinSecUtilities.LatLongPrefix.S;
-                        break;
-                }
-
-                GeoCordSystemDegMinSecUtilities.LatLongClass P_Pont = new GeoCordSystemDegMinSecUtilities.LatLongClass(LAT_DEG, LAT_MIN, LAT_SEC, Lat_Prefix, LON_DEG, LON_MIN, LON_SEC, Lon_Prefix);
+                GeoCordSystemDegMinSecUtilities.LatLongClass P_Pont = new GeoCordSystemDegMinSecUtilities.LatLongClass(double.Parse(Record[0].Lat), double.Parse(Record[0].Lon));
 
                 PointLatLng PredictedPoint = new PointLatLng(P_Pont.GetLatLongDecimal().LatitudeDecimal, P_Pont.GetLatLongDecimal().LongitudeDecimal);
                 PredictionMarker PM;

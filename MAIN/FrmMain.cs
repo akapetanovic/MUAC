@@ -242,7 +242,7 @@ namespace AsterixDisplayAnalyser
             this.labelTrackCoast.Text = Properties.Settings.Default.TrackCoast.ToString();
             this.PlotandTrackDisplayUpdateTimer.Interval = Properties.Settings.Default.UpdateRate;
             this.labelDisplayUpdateRate.Text = "Update rate: " + this.PlotandTrackDisplayUpdateTimer.Interval.ToString() + "ms";
-            this.checkEnableDisplay.Checked = Properties.Settings.Default.DisplayEnabled;
+            this.checkEnableDisplay.Checked = false;
             this.checkBoxFLFilter.Checked = Properties.Settings.Default.FL_Filter_Enabled;
             this.numericUpDownUpper.Value = Properties.Settings.Default.FL_Upper;
             this.numericUpDownLower.Value = Properties.Settings.Default.FL_Lower;
@@ -351,6 +351,9 @@ namespace AsterixDisplayAnalyser
                 this.checkBoxRecording.Checked = false;
                 HandleNoDataForCAT034I050(false);
 
+                this.checkEnableDisplay.Checked = false;
+                HandlePlotDisplayEnabledChanged();
+
             }
             else
             {
@@ -368,6 +371,9 @@ namespace AsterixDisplayAnalyser
                 SetNewConnection();
                 Thread ListenForDataThread = new Thread(new ThreadStart(ASTERIX.ListenForData));
                 ListenForDataThread.Start();
+
+                this.checkEnableDisplay.Checked = true;
+                HandlePlotDisplayEnabledChanged();
             }
 
             HandlePlotDisplayEnabledChanged();
@@ -755,14 +761,46 @@ namespace AsterixDisplayAnalyser
                     WBTD WebBasedDisplayProvider = new WBTD();
                     PredictionBuilder Prediction_B = new PredictionBuilder();
 
-                    foreach (DynamicDisplayBuilder.TargetType Target in TargetList)
+                    try
                     {
-                        if (Passes_Check_For_Flight_Level_Filter(Target.ModeC))
+                        foreach (DynamicDisplayBuilder.TargetType Target in TargetList)
                         {
-                            // If SSR code filtering is to be applied 
-                            if (this.checkBoxFilterBySSR.Checked == true && (this.textBoxSSRCode.Text.Length == 4))
+                            if (Passes_Check_For_Flight_Level_Filter(Target.ModeC))
                             {
-                                if (Target.ModeA == this.textBoxSSRCode.Text)
+                                // If SSR code filtering is to be applied 
+                                if (this.checkBoxFilterBySSR.Checked == true && (this.textBoxSSRCode.Text.Length == 4))
+                                {
+                                    if (Target.ModeA == this.textBoxSSRCode.Text)
+                                    {
+                                        Target.MyMarker.ToolTipMode = MarkerTooltipMode.Never;
+                                        Target.MyMarker.Position = new PointLatLng(Target.Lat, Target.Lon);
+                                        BuildDynamicLabelText(Target, ref Target.MyMarker);
+                                        SetLabelAttributes(ref Target.MyMarker);
+
+                                        if (Build_Local_Display)
+                                        {
+                                            DinamicOverlay.Markers.Add(Target.MyMarker);
+
+                                            if (SharedData.Prediction1_Enabled)
+                                                Prediction_B.Build_Prediction_Marker(Target.MyMarker.Position, Target.MyMarker.CALLSIGN_STRING, MySqlProvider.PredictionTableNumberType.One, ref PredictionOverlay);
+
+                                            if (SharedData.Prediction2_Enabled)
+                                                Prediction_B.Build_Prediction_Marker(Target.MyMarker.Position, Target.MyMarker.CALLSIGN_STRING, MySqlProvider.PredictionTableNumberType.Two, ref PredictionOverlay);
+
+                                            if (SharedData.Prediction3_Enabled)
+                                                Prediction_B.Build_Prediction_Marker(Target.MyMarker.Position, Target.MyMarker.CALLSIGN_STRING, MySqlProvider.PredictionTableNumberType.Three, ref PredictionOverlay);
+
+                                        }
+
+                                        if (Provide_To_Google_Earth)
+                                            ASTX_TO_KML.AddNewTarget(Target);
+
+                                        if (ProvideWebData)
+                                            WebBasedDisplayProvider.SetTargetData(Target.Lat.ToString(), Target.Lon.ToString(), Target.ACID_Mode_S,
+                                                Target.ModeA, Target.ModeC);
+                                    }
+                                }
+                                else // No SSR filter so just display all of them
                                 {
                                     Target.MyMarker.ToolTipMode = MarkerTooltipMode.Never;
                                     Target.MyMarker.Position = new PointLatLng(Target.Lat, Target.Lon);
@@ -781,7 +819,6 @@ namespace AsterixDisplayAnalyser
 
                                         if (SharedData.Prediction3_Enabled)
                                             Prediction_B.Build_Prediction_Marker(Target.MyMarker.Position, Target.MyMarker.CALLSIGN_STRING, MySqlProvider.PredictionTableNumberType.Three, ref PredictionOverlay);
-
                                     }
 
                                     if (Provide_To_Google_Earth)
@@ -789,38 +826,14 @@ namespace AsterixDisplayAnalyser
 
                                     if (ProvideWebData)
                                         WebBasedDisplayProvider.SetTargetData(Target.Lat.ToString(), Target.Lon.ToString(), Target.ACID_Mode_S,
-                                            Target.ModeA, Target.ModeC);
+                                           Target.ModeA, Target.ModeC);
                                 }
-                            }
-                            else // No SSR filter so just display all of them
-                            {
-                                Target.MyMarker.ToolTipMode = MarkerTooltipMode.Never;
-                                Target.MyMarker.Position = new PointLatLng(Target.Lat, Target.Lon);
-                                BuildDynamicLabelText(Target, ref Target.MyMarker);
-                                SetLabelAttributes(ref Target.MyMarker);
-
-                                if (Build_Local_Display)
-                                {
-                                    DinamicOverlay.Markers.Add(Target.MyMarker);
-
-                                    if (SharedData.Prediction1_Enabled)
-                                        Prediction_B.Build_Prediction_Marker(Target.MyMarker.Position, Target.MyMarker.CALLSIGN_STRING, MySqlProvider.PredictionTableNumberType.One, ref PredictionOverlay);
-
-                                    if (SharedData.Prediction2_Enabled)
-                                        Prediction_B.Build_Prediction_Marker(Target.MyMarker.Position, Target.MyMarker.CALLSIGN_STRING, MySqlProvider.PredictionTableNumberType.Two, ref PredictionOverlay);
-
-                                    if (SharedData.Prediction3_Enabled)
-                                        Prediction_B.Build_Prediction_Marker(Target.MyMarker.Position, Target.MyMarker.CALLSIGN_STRING, MySqlProvider.PredictionTableNumberType.Three, ref PredictionOverlay);
-                                }
-
-                                if (Provide_To_Google_Earth)
-                                    ASTX_TO_KML.AddNewTarget(Target);
-
-                                if (ProvideWebData)
-                                    WebBasedDisplayProvider.SetTargetData(Target.Lat.ToString(), Target.Lon.ToString(), Target.ACID_Mode_S,
-                                       Target.ModeA, Target.ModeC);
                             }
                         }
+                    }
+                    catch
+                    {
+                 
                     }
 
                     Cursor.Position = new Point(Cursor.Position.X + 1, Cursor.Position.Y);
@@ -1102,9 +1115,6 @@ namespace AsterixDisplayAnalyser
                 if (DinamicOverlay != null)
                     DinamicOverlay.Markers.Clear();
             }
-
-            Properties.Settings.Default.DisplayEnabled = this.checkEnableDisplay.Checked;
-            Properties.Settings.Default.Save();
         }
 
         private void textBoxUpdateRate_KeyPress(object sender, KeyPressEventArgs e)

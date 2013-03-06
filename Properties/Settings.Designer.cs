@@ -205,18 +205,6 @@ namespace AsterixDisplayAnalyser.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("True")]
-        public bool DisplayEnabled {
-            get {
-                return ((bool)(this["DisplayEnabled"]));
-            }
-            set {
-                this["DisplayEnabled"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("False")]
         public bool FL_Filter_Enabled {
             get {

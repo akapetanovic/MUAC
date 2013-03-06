@@ -573,6 +573,8 @@
     <None Include="DATA SAMPLES\ARTAS.rply" />
     <None Include="DATA SAMPLES\Jahorina.raw" />
     <None Include="DATA SAMPLES\Jahorina.rply" />
+    <None Include="DOCUMENTATION\ASTERIX DARR UM 2.8.pdf" />
+    <None Include="DOCUMENTATION\CBT Real Time UM 1.0.docx" />
     <None Include="MAIN\app.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -590,7 +592,6 @@
       <DependentUpon>FrmConnectionSettings.cs</DependentUpon>
     </Compile>
     <Compile Include="MAIN\SharedData.cs" />
-    <None Include="DOCUMENTATION\User Manual.docx" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.0">

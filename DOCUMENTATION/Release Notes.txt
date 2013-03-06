@@ -81,6 +81,10 @@ VERSION HISTORY
 // MUAC CBT Real Time
 ///////////////////////////////////////////////////////////////////////////////////////////////////////
 
+Version 1.1
+
+	1. Fixed bug that caused contraint error when processing CAT01 as plots.
+
 Version 1.0
 
 	1. First release support for Prediction display

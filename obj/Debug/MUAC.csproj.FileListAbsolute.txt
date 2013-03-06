@@ -84,3 +84,4 @@ C:\Users\CAAS\Documents\Visual Studio 2010\Projects\MUAC\bin\Debug\GMap.NET.Core
 C:\Users\CAAS\Documents\Visual Studio 2010\Projects\MUAC\bin\Debug\GMap.NET.WindowsForms.xml
 C:\Users\CAAS\Documents\Visual Studio 2010\Projects\MUAC\obj\Debug\Asterix-Display-Analyser.exe.manifest
 C:\Users\CAAS\Documents\Visual Studio 2010\Projects\MUAC\obj\Debug\Asterix-Display-Analyser.application
+C:\Users\bhdca\Documents\Visual Studio 2010\Projects\MUAC\obj\Debug\MUAC.csprojResolveAssemblyReference.cache

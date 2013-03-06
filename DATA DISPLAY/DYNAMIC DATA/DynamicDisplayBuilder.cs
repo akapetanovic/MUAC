@@ -409,7 +409,10 @@ namespace AsterixDisplayAnalyser
                         // Get Time Since Midnight
                         CAT01I141Types.CAT01141ElapsedTimeSinceMidnight TimeSinceMidnight = (CAT01I141Types.CAT01141ElapsedTimeSinceMidnight)Msg.CAT01DataItems[CAT01.ItemIDToIndex("141")].value;
                         // Get Calculated GSPD and HDG_Type
-                        CAT01I200Types.CalculatedGSPandHDG_Type CalculatedGSPandHDG = (CAT01I200Types.CalculatedGSPandHDG_Type)Msg.CAT01DataItems[CAT01.ItemIDToIndex("200")].value;
+                        CAT01I200Types.CalculatedGSPandHDG_Type CalculatedGSPandHDG = null;
+
+                        if (MyCAT01I020UserData.Type_Of_Report == CAT01I020Types.Type_Of_Report_Type.Track)
+                            CalculatedGSPandHDG = (CAT01I200Types.CalculatedGSPandHDG_Type)Msg.CAT01DataItems[CAT01.ItemIDToIndex("200")].value;
 
 
                         TargetType Target = new TargetType();
@@ -864,7 +867,10 @@ namespace AsterixDisplayAnalyser
                         // Get Time Since Midnight
                         CAT01I141Types.CAT01141ElapsedTimeSinceMidnight TimeSinceMidnight = (CAT01I141Types.CAT01141ElapsedTimeSinceMidnight)Msg.CAT01DataItems[CAT01.ItemIDToIndex("141")].value;
                         // Get Calculated GSPD and HDG_Type
-                        CAT01I200Types.CalculatedGSPandHDG_Type CalculatedGSPandHDG = (CAT01I200Types.CalculatedGSPandHDG_Type)Msg.CAT01DataItems[CAT01.ItemIDToIndex("200")].value;
+                        CAT01I200Types.CalculatedGSPandHDG_Type CalculatedGSPandHDG = null;
+
+                        if (MyCAT01I020UserData.Type_Of_Report == CAT01I020Types.Type_Of_Report_Type.Track)
+                            CalculatedGSPandHDG = (CAT01I200Types.CalculatedGSPandHDG_Type)Msg.CAT01DataItems[CAT01.ItemIDToIndex("200")].value;
 
                         TargetType Target = new TargetType();
                         if (MyCAT01I020UserData != null)

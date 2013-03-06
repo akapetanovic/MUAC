@@ -1,0 +1,3 @@
+# System center is : Deg (int), Min (int), Sec (int), Prefix (E/W/N/S)
+SYS_ORIGIN,48,18,42,N,13,2,25,E
+BACKGROUND,Black

@@ -198,7 +198,7 @@ namespace AsterixDisplayAnalyser
 
             this.labelConnIpAndPort.Text = SharedData.CurrentMulticastAddress.ToString() + " : " + Port;
             this.labelLocalInterface.Text = SharedData.CurrentInterfaceIPAddress.ToString();
-            this.Text = "CBT Real Time 1.0";
+            this.Text = "CBT Real Time 1.1";
         }
 
         // Display menu box to enable users to set up connection(s)

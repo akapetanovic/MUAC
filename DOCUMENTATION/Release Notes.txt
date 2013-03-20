@@ -81,9 +81,12 @@ VERSION HISTORY
 // MUAC CBT Real Time
 ///////////////////////////////////////////////////////////////////////////////////////////////////////
 
+
 Version 1.1
 
 	1. Fixed bug that caused contraint error when processing CAT01 as plots.
+	2. Fixed bug that caused incorrect display of latitude for south positions 
+	   for DEG/MIN/SEC format.
 
 Version 1.0
 

@@ -85,3 +85,47 @@ C:\Users\CAAS\Documents\Visual Studio 2010\Projects\MUAC\bin\Debug\GMap.NET.Wind
 C:\Users\CAAS\Documents\Visual Studio 2010\Projects\MUAC\obj\Debug\Asterix-Display-Analyser.exe.manifest
 C:\Users\CAAS\Documents\Visual Studio 2010\Projects\MUAC\obj\Debug\Asterix-Display-Analyser.application
 C:\Users\bhdca\Documents\Visual Studio 2010\Projects\MUAC\obj\Debug\MUAC.csprojResolveAssemblyReference.cache
+C:\Users\AMER\Documents\Projects\MUAC\bin\Debug\Asterix-Display-Analyser.exe.config
+C:\Users\AMER\Documents\Projects\MUAC\obj\Debug\Asterix-Display-Analyser.exe
+C:\Users\AMER\Documents\Projects\MUAC\obj\Debug\Asterix-Display-Analyser.pdb
+C:\Users\AMER\Documents\Projects\MUAC\bin\Debug\Asterix-Display-Analyser.exe.manifest
+C:\Users\AMER\Documents\Projects\MUAC\bin\Debug\Asterix-Display-Analyser.application
+C:\Users\AMER\Documents\Projects\MUAC\bin\Debug\Asterix-Display-Analyser.exe
+C:\Users\AMER\Documents\Projects\MUAC\bin\Debug\Asterix-Display-Analyser.pdb
+C:\Users\AMER\Documents\Projects\MUAC\bin\Debug\GMap.NET.Core.dll
+C:\Users\AMER\Documents\Projects\MUAC\bin\Debug\GMap.NET.WindowsForms.dll
+C:\Users\AMER\Documents\Projects\MUAC\bin\Debug\Google.KML.dll
+C:\Users\AMER\Documents\Projects\MUAC\bin\Debug\ICSharpCode.SharpZipLib.dll
+C:\Users\AMER\Documents\Projects\MUAC\bin\Debug\GMap.NET.Core.xml
+C:\Users\AMER\Documents\Projects\MUAC\bin\Debug\GMap.NET.WindowsForms.xml
+C:\Users\AMER\Documents\Projects\MUAC\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\AMER\Documents\Projects\MUAC\obj\Debug\AsterixDisplayAnalyser.FrmExtendedLabel.resources
+C:\Users\AMER\Documents\Projects\MUAC\obj\Debug\AsterixDisplayAnalyser.UpdateHDG.resources
+C:\Users\AMER\Documents\Projects\MUAC\obj\Debug\AsterixDisplayAnalyser.UpdateSPD.resources
+C:\Users\AMER\Documents\Projects\MUAC\obj\Debug\AsterixDisplayAnalyser.CAT_Decoder_Selector.resources
+C:\Users\AMER\Documents\Projects\MUAC\obj\Debug\AsterixDisplayAnalyser.FrmAbout.resources
+C:\Users\AMER\Documents\Projects\MUAC\obj\Debug\AsterixDisplayAnalyser.frmDebug.resources
+C:\Users\AMER\Documents\Projects\MUAC\obj\Debug\AsterixDisplayAnalyser.ConnectionSettings.resources
+C:\Users\AMER\Documents\Projects\MUAC\obj\Debug\AsterixDisplayAnalyser.PredictionControl.resources
+C:\Users\AMER\Documents\Projects\MUAC\obj\Debug\AsterixDisplayAnalyser.FrmAstxRecFrwdForm.resources
+C:\Users\AMER\Documents\Projects\MUAC\obj\Debug\AsterixDisplayAnalyser.DisplayAttibutePicker.resources
+C:\Users\AMER\Documents\Projects\MUAC\obj\Debug\AsterixDisplayAnalyser.DisplayItemSelection.resources
+C:\Users\AMER\Documents\Projects\MUAC\obj\Debug\AsterixDisplayAnalyser.DisplayRightClickOptions.resources
+C:\Users\AMER\Documents\Projects\MUAC\obj\Debug\AsterixDisplayAnalyser.FileReadProgress.resources
+C:\Users\AMER\Documents\Projects\MUAC\obj\Debug\AsterixDisplayAnalyser.LabelAttributePicker.resources
+C:\Users\AMER\Documents\Projects\MUAC\obj\Debug\AsterixDisplayAnalyser.MisscelaneousSettings.resources
+C:\Users\AMER\Documents\Projects\MUAC\obj\Debug\AsterixDisplayAnalyser.UpdateCFL.resources
+C:\Users\AMER\Documents\Projects\MUAC\obj\Debug\AsterixDisplayAnalyser.EarthPlotExporter.resources
+C:\Users\AMER\Documents\Projects\MUAC\obj\Debug\AsterixDisplayAnalyser.FrmDataItemPresence.resources
+C:\Users\AMER\Documents\Projects\MUAC\obj\Debug\AsterixDisplayAnalyser.FrmDetailedView.resources
+C:\Users\AMER\Documents\Projects\MUAC\obj\Debug\AsterixDisplayAnalyser.FormMain.resources
+C:\Users\AMER\Documents\Projects\MUAC\obj\Debug\AsterixDisplayAnalyser.Properties.Resources.resources
+C:\Users\AMER\Documents\Projects\MUAC\obj\Debug\AsterixDisplayAnalyser.FrmConnectionSettings.resources
+C:\Users\AMER\Documents\Projects\MUAC\obj\Debug\AsterixDisplayAnalyser.GoogleEarthProvider.resources
+C:\Users\AMER\Documents\Projects\MUAC\obj\Debug\AsterixDisplayAnalyser.FrmReplayForm.resources
+C:\Users\AMER\Documents\Projects\MUAC\obj\Debug\AsterixDisplayAnalyser.ViewDataBySSRCode.resources
+C:\Users\AMER\Documents\Projects\MUAC\obj\Debug\AsterixDisplayAnalyser.FrmReplayToRaw.resources
+C:\Users\AMER\Documents\Projects\MUAC\obj\Debug\GenerateResource.read.1.tlog
+C:\Users\AMER\Documents\Projects\MUAC\obj\Debug\GenerateResource.write.1.tlog
+C:\Users\AMER\Documents\Projects\MUAC\obj\Debug\Asterix-Display-Analyser.exe.manifest
+C:\Users\AMER\Documents\Projects\MUAC\obj\Debug\Asterix-Display-Analyser.application

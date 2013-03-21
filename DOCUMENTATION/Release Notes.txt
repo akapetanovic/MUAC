@@ -87,6 +87,7 @@ Version 1.1
 	1. Fixed bug that caused contraint error when processing CAT01 as plots.
 	2. Fixed bug that caused incorrect display of latitude for south positions 
 	   for DEG/MIN/SEC format.
+	3. Fixed bug that incorrectly handled system origyn for S/W positions.
 
 Version 1.0
 
